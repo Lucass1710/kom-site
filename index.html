@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!-- Ce fichier est la page d'accueil du site KOM. -->
+<html lang="fr">
+<head>
+  <!-- La partie "head" contient des réglages invisibles pour le visiteur -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Version de test : demande aux moteurs de recherche (Google…) de ne pas afficher ce site. À retirer à la mise en ligne finale. -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>KOM Cycling Studio</title>
+
+  <!-- Le style (couleurs, tailles, positions) est rangé dans le fichier style.css, commun à toutes les pages -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<!-- La partie "body" contient ce que le visiteur voit -->
+<body>
+
+  <!-- Barre de menu : logo à gauche, liens à droite -->
+  <header class="menu">
+    <!-- Le logo KOM sert de bouton "Accueil" : un clic ramène à la page d'accueil -->
+    <!-- Le texte "KOM" sera remplacé par l'image du vrai logo -->
+    <a class="logo" href="index.html" aria-label="KOM Cycling Studio – accueil"><span class="logo-img"></span></a>
+    <!-- Bouton ☰ (visible seulement sur téléphone) -->
+    <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="liens">
+      <a href="velos.html">Les vélos</a>
+      <a href="#">Composer mon vélo</a>
+      <a href="studio.html">Le studio</a>
+      <!-- Menu déroulant : au survol, deux choix apparaissent -->
+      <div class="menu-deroulant">
+        <a href="nutrition.html" class="declencheur">Équipement</a>
+        <div class="sous-menu"><div class="sous-menu-boite">
+          <a href="nutrition.html">Nutrition</a>
+          <a href="textile.html">Textile</a>
+        </div></div>
+      </div>
+      <a href="rendez-vous.html">Rendez-vous</a>
+    </nav>
+  </header>
+
+  <!-- Diaporama : 3 vélos qui défilent tout seuls -->
+  <!-- Les slogans sont des propositions, à faire valider par le propriétaire -->
+  <section class="diaporama">
+
+    <div class="diapo visible">
+      <!-- Photo provisoire (site officiel Drali), à remplacer par le kit média -->
+      <img class="photo-velo photo-claire" src="images/drali-iridio-team-edition.jpg" alt="Vélo Drali Milano Iridio Team Edition">
+      <h2 class="slogan">Né à Milan. Taillé pour la vitesse.</h2>
+      <p class="marque">Drali Milano · Iridio</p>
+      <a class="bouton" href="fiche-iridio.html">Découvrir</a>
+    </div>
+
+    <div class="diapo">
+      <!-- Photo provisoire (site officiel Regola), à remplacer par le kit média -->
+      <img class="photo-velo" src="images/regola-dardo.jpg" alt="Vélo Regola Dardo violet et blanc">
+      <h2 class="slogan">La seule règle : la vôtre.</h2>
+      <p class="marque">Regola · Dardo</p>
+      <a class="bouton" href="fiche-dardo.html">Découvrir</a>
+    </div>
+
+    <div class="diapo">
+      <!-- Photo provisoire (site officiel Gusto), à remplacer par le kit média -->
+      <img class="photo-velo" src="images/gusto-gtr-elite-ultra.jpg" alt="Vélo Gusto GTR Elite Ultra">
+      <h2 class="slogan">Le meilleur équipement, au juste prix.</h2>
+      <p class="marque">Gusto · GTR Elite Ultra</p>
+      <a class="bouton" href="fiche-gtr-elite-ultra.html">Découvrir</a>
+    </div>
+
+    <div class="diapo">
+      <!-- Photo provisoire (site officiel Officine Mattio), à remplacer par le kit média -->
+      <img class="photo-velo photo-claire" src="images/officine-mattio-vento.jpg" alt="Vélo Officine Mattio Vento RT">
+      <h2 class="slogan">Fait main en Italie, au pied du Mont Viso.</h2>
+      <p class="marque">Officine Mattio · Vento</p>
+      <a class="bouton" href="fiche-vento.html">Découvrir</a>
+    </div>
+
+    <!-- Flèches : ‹ pour revenir en arrière, › pour avancer -->
+    <button class="fleche fleche-gauche" aria-label="Vélo précédent">‹</button>
+    <button class="fleche fleche-droite" aria-label="Vélo suivant">›</button>
+
+    <div class="points">
+      <span class="point actif"></span>
+      <span class="point"></span>
+      <span class="point"></span>
+      <span class="point"></span>
+    </div>
+  </section>
+
+  <!-- Sur rendez-vous : le concept du showroom (textes repris du site actuel) -->
+  <section class="rdv">
+    <div class="trait-dore"></div>
+    <p class="sur-titre">Sur rendez-vous</p>
+    <h2 class="titre-section">Un showroom pensé pour une seule personne à la fois.</h2>
+    <p class="rdv-texte">
+      Le studio reçoit uniquement sur rendez-vous. Vous disposez du lieu, du temps
+      et de notre attention pour imaginer le vélo qui vous ressemble.
+    </p>
+    <a class="bouton" href="rendez-vous.html">Prendre rendez-vous</a>
+    <p class="rdv-infos">Draguignan · 06 38 82 22 19</p>
+  </section>
+
+  <!-- Le "script" est un petit programme : il change de photo toutes les 8 secondes -->
+  <script>
+    const diapos = document.querySelectorAll('.diapo');
+    const points = document.querySelectorAll('.point');
+    let numero = 0;   // numéro de la photo affichée (on commence à 0)
+    let minuteur;     // le "chronomètre" qui fait avancer tout seul
+
+    // Affiche le vélo demandé (si on dépasse la fin, on revient au début, et inversement)
+    function montrer(nouveau) {
+      diapos[numero].classList.remove('visible');
+      points[numero].classList.remove('actif');
+      numero = (nouveau + diapos.length) % diapos.length;
+      diapos[numero].classList.add('visible');
+      points[numero].classList.add('actif');
+    }
+
+    // Relance le chronomètre : avance tout seul toutes les 8 secondes
+    function relancer() {
+      clearInterval(minuteur);
+      minuteur = setInterval(function () { montrer(numero + 1); }, 8000);   // 8000 millisecondes = 8 secondes
+    }
+
+    // Clic sur une flèche : on change de vélo, et on remet le chronomètre à zéro
+    document.querySelector('.fleche-gauche').addEventListener('click', function () { montrer(numero - 1); relancer(); });
+    document.querySelector('.fleche-droite').addEventListener('click', function () { montrer(numero + 1); relancer(); });
+
+    relancer();   // démarre le défilement automatique
+
+    // Menu : fond noir dès qu'on a descendu de plus de 50 pixels, transparent tout en haut
+    const menu = document.querySelector('.menu');
+    function verifierDefilement() {
+      menu.classList.toggle('fond-noir', window.scrollY > 50);
+    }
+    window.addEventListener('scroll', verifierDefilement);
+    verifierDefilement();   // vérifie aussi au chargement de la page
+  </script>
+
+  <!-- Menu ☰ du téléphone (programme commun) -->
+  <script src="menu.js"></script>
+
+</body>
+</html>

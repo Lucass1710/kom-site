@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<!-- Ce fichier est la page « Les vélos » : le catalogue du showroom. -->
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Version de test : demande aux moteurs de recherche (Google…) de ne pas afficher ce site. À retirer à la mise en ligne finale. -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>Les vélos – KOM Cycling Studio</title>
+
+  <!-- Même fichier de style que la page d'accueil -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Barre de menu (identique sur toutes les pages).
+       Ici, pas de grande photo derrière : le menu a directement son fond noir. -->
+  <header class="menu fond-noir">
+    <a class="logo" href="index.html" aria-label="KOM Cycling Studio – accueil"><span class="logo-img"></span></a>
+    <!-- Bouton ☰ (visible seulement sur téléphone) -->
+    <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="liens">
+      <a href="velos.html" class="page-active">Les vélos</a>   <!-- en doré : la page où l'on se trouve -->
+      <a href="#">Composer mon vélo</a>
+      <a href="studio.html">Le studio</a>
+      <!-- Menu déroulant : au survol, deux choix apparaissent -->
+      <div class="menu-deroulant">
+        <a href="nutrition.html" class="declencheur">Équipement</a>
+        <div class="sous-menu"><div class="sous-menu-boite">
+          <a href="nutrition.html">Nutrition</a>
+          <a href="textile.html">Textile</a>
+        </div></div>
+      </div>
+      <a href="rendez-vous.html">Rendez-vous</a>
+    </nav>
+  </header>
+
+  <!-- En-tête de la page (textes repris du site actuel) -->
+  <section class="entete-page">
+    <p class="sur-titre">Le catalogue</p>
+    <h1 class="titre-section">Les vélos</h1>
+    <p class="intro">
+      Découvrez les modèles des marques présentées au showroom. Ensemble, nous étudierons
+      les différentes configurations possibles afin de composer le vélo qui vous correspond.
+    </p>
+  </section>
+
+  <!-- Filtre par marque : chaque bouton porte le nom de la marque à afficher -->
+  <div class="filtres">
+    <button class="filtre actif" data-marque="toutes">Toutes les marques</button>
+    <button class="filtre" data-marque="drali">Drali Milano</button>
+    <button class="filtre" data-marque="regola">Regola</button>
+    <button class="filtre" data-marque="gusto">Gusto</button>
+    <button class="filtre" data-marque="mattio">Officine Mattio</button>
+  </div>
+
+  <!-- Le catalogue : une carte par modèle.
+       data-marque sert au filtre. Prix et descriptions repris du site actuel. -->
+  <div class="cartes catalogue">
+
+    <!-- ===== DRALI MILANO ===== -->
+    <a class="carte" href="fiche-iridio.html" data-marque="drali">
+      <div class="carte-diapo">
+          <img class="visible" src="images/drali-iridio-team-edition.jpg" alt="Drali Milano Iridio">
+          <img src="images/iridio/iridio-2.jpg" alt="Drali Milano Iridio, photo 2">
+          <img src="images/iridio/iridio-3.jpg" alt="Drali Milano Iridio, photo 3">
+          <button class="mini-fleche gauche" aria-label="Photo précédente">‹</button>
+          <button class="mini-fleche droite" aria-label="Photo suivante">›</button>
+          <div class="mini-points"></div>
+        </div>
+      <div class="carte-texte">
+        <p class="sur-titre">Drali Milano</p>
+        <span class="type-velo">Route · Aéro</span>
+        <h3>Iridio</h3>
+        <p>Le modèle aéro de la gamme, cadre de 890 g en taille 54.</p>
+        <p class="prix">À partir de 5 890 €</p>
+        <span class="lien-dore">Voir la fiche →</span>
+      </div>
+    </a>
+
+    <a class="carte" href="fiche-onice.html" data-marque="drali">
+      <div class="carte-diapo">
+          <img class="visible" src="images/drali-onice.jpg" alt="Drali Milano Onice">
+          <img src="images/onice/onice-2.jpg" alt="Drali Milano Onice, photo 2">
+          <img src="images/onice/onice-3.jpg" alt="Drali Milano Onice, photo 3">
+          <img src="images/onice/onice-4.jpg" alt="Drali Milano Onice, photo 4">
+          <button class="mini-fleche gauche" aria-label="Photo précédente">‹</button>
+          <button class="mini-fleche droite" aria-label="Photo suivante">›</button>
+          <div class="mini-points"></div>
+        </div>
+      <div class="carte-texte">
+        <p class="sur-titre">Drali Milano</p>
+        <span class="type-velo">Route</span>
+        <h3>Onice</h3>
+        <p>Un équilibre entre légèreté, rigidité et confort. Cadre fabriqué en Italie.</p>
+        <p class="prix">À partir de 4 990 €</p>
+        <span class="lien-dore">Voir la fiche →</span>
+      </div>
+    </a>
+
+    <a class="carte" href="fiche-opale.html" data-marque="drali">
+      <div class="carte-diapo">
+          <img class="visible" src="images/drali-opale.jpg" alt="Drali Milano Opale">
+          <img src="images/opale/opale-2.jpg" alt="Drali Milano Opale, photo 2">
+          <img src="images/opale/opale-3.jpg" alt="Drali Milano Opale, photo 3">
+          <img src="images/opale/opale-4.jpg" alt="Drali Milano Opale, photo 4">
+          <img src="images/opale/opale-5.jpg" alt="Drali Milano Opale, photo 5">
+          <button class="mini-fleche gauche" aria-label="Photo précédente">‹</button>
+          <button class="mini-fleche droite" aria-label="Photo suivante">›</button>
+          <div class="mini-points"></div>
+        </div>
+      <div class="carte-texte">
+        <p class="sur-titre">Drali Milano</p>
+        <span class="type-velo">Route</span>
+        <h3>Opale</h3>
+        <p>La version légère, pour ceux qui aiment les ascensions et l'exclusivité.</p>
+        <p class="prix">À partir de 7 690 €</p>
+        <span class="lien-dore">Voir la fiche →</span>
+      </div>
+    </a>
+
+    <a class="carte" href="fiche-zenith.html" data-marque="drali">
+      <div class="carte-diapo">
+          <img class="visible" src="images/drali-zenith.jpg" alt="Drali Milano Zenith">
+          <img src="images/zenith/zenith-2.jpg" alt="Drali Milano Zenith, photo 2">
+          <img src="images/zenith/zenith-3.jpg" alt="Drali Milano Zenith, photo 3">
+          <img src="images/zenith/zenith-4.jpg" alt="Drali Milano Zenith, photo 4">
+          <img src="images/zenith/zenith-5.jpg" alt="Drali Milano Zenith, photo 5">
+          <button class="mini-fleche gauche" aria-label="Photo précédente">‹</button>
+          <button class="mini-fleche droite" aria-label="Photo suivante">›</button>
+          <div class="mini-points"></div>
+        </div>
+      <div class="carte-texte">
+        <p class="sur-titre">Drali Milano</p>
+        <span class="type-velo">Gravel</span>
+        <h3>Zenith</h3>
+        <p>Gravel carbone sans limite, pour tous les types de terrains.</p>
+        <p class="prix">À partir de 3 950 €</p>
+        <span class="lien-dore">Voir la fiche →</span>
+      </div>
+    </a>
+
+    <!-- ===== REGOLA ===== -->
+    <a class="carte" href="fiche-c01.html" data-marque="regola">
+      <div class="carte-diapo">
+          <img class="visible" src="images/regola-c01.jpg" alt="Regola C01">
+          <img src="images/c01/c01-2.jpg" alt="Regola C01, photo 2">
+          <button class="mini-fleche gauche" aria-label="Photo précédente">‹</button>
+          <button class="mini-fleche droite" aria-label="Photo suivante">›</button>
+          <div class="mini-points"></div>
+        </div>
+      <div class="carte-texte">
+        <p class="sur-titre">Regola</p>
+        <span class="type-velo">Route</span>
+        <h3>C01</h3>
+        <p>Cadre carbone de 850 g, polyvalent et extrêmement réactif. Peinture custom.</p>
+        <p class="prix">À partir de 5 990 €</p>
+        <span class="lien-dore">Voir la fiche →</span>
+      </div>
+    </a>
+
+    <a class="carte" href="fiche-dardo.html" data-marque="regola">
+      <div class="carte-diapo">
+          <img class="visible" src="images/regola-dardo.jpg" alt="Regola Dardo">
+          <img src="images/dardo/dardo-2.jpg" alt="Regola Dardo, photo 2">
+          <img src="images/dardo/dardo-3.jpg" alt="Regola Dardo, photo 3">
+          <img src="images/dardo/dardo-4.jpg" alt="Regola Dardo, photo 4">
+          <button class="mini-fleche gauche" aria-label="Photo précédente">‹</button>
+          <button class="mini-fleche droite" aria-label="Photo suivante">›</button>
+          <div class="mini-points"></div>
+        </div>
+      <div class="carte-texte">
+        <p class="sur-titre">Regola</p>
+        <span class="type-velo">Route · Vitesse</span>
+        <h3>Dardo</h3>
+        <p>Un cadre de 890 g pensé pour la vitesse, peinture 100 % personnalisable.</p>
+        <p class="prix">À partir de 4 990 €</p>
+        <span class="lien-dore">Voir la fiche →</span>
+      </div>
+    </a>
+
+    <a class="carte" href="fiche-gieira.html" data-marque="regola">
+      <div class="carte-diapo">
+          <img class="visible" src="images/regola-gieira.jpg" alt="Regola Gieira">
+          <img src="images/gieira/gieira-2.jpg" alt="Regola Gieira, photo 2">
+          <button class="mini-fleche gauche" aria-label="Photo précédente">‹</button>
+          <button class="mini-fleche droite" aria-label="Photo suivante">›</button>
+          <div class="mini-points"></div>
+        </div>
+      <div class="carte-texte">
+        <p class="sur-titre">Regola</p>
+        <span class="type-velo">Gravel</span>
+        <h3>Gieira</h3>
+        <p>Un cadre gravel de 1 060 g, peinture 100 % personnalisable.</p>
+        <p class="prix">À partir de 4 290 €</p>
+        <span class="lien-dore">Voir la fiche →</span>
+      </div>
+    </a>
+
+    <!-- ===== GUSTO ===== -->
+    <a class="carte" href="fiche-gtr-elite-ultra.html" data-marque="gusto">
+      <div class="carte-diapo">
+          <img class="visible" src="images/gusto-gtr-elite-ultra.jpg" alt="Gusto GTR Elite Ultra">
+          <img src="images/gtr/gtr-2.jpg" alt="Gusto GTR Elite Ultra, photo 2">
+          <img src="images/gtr/gtr-3.jpg" alt="Gusto GTR Elite Ultra, photo 3">
+          <img src="images/gtr/gtr-4.jpg" alt="Gusto GTR Elite Ultra, photo 4">
+          <img src="images/gtr/gtr-5.jpg" alt="Gusto GTR Elite Ultra, photo 5">
+          <button class="mini-fleche gauche" aria-label="Photo précédente">‹</button>
+          <button class="mini-fleche droite" aria-label="Photo suivante">›</button>
+          <div class="mini-points"></div>
+        </div>
+      <div class="carte-texte">
+        <p class="sur-titre">Gusto</p>
+        <span class="type-velo">Route</span>
+        <h3>GTR Elite Ultra</h3>
+        <p>Le rapport qualité / prix ultime, carbone T1000 et grand confort.</p>
+        <p class="prix">À partir de 2 750 €</p>
+        <span class="lien-dore">Voir la fiche →</span>
+      </div>
+    </a>
+
+    <a class="carte" href="fiche-gtg.html" data-marque="gusto">
+      <div class="carte-diapo">
+          <img class="visible" src="images/gusto-gtg.jpg" alt="Gusto GTG">
+          <img src="images/gtg/gtg-2.jpg" alt="Gusto GTG, photo 2">
+          <img src="images/gtg/gtg-3.jpg" alt="Gusto GTG, photo 3">
+          <img src="images/gtg/gtg-4.jpg" alt="Gusto GTG, photo 4">
+          <img src="images/gtg/gtg-5.jpg" alt="Gusto GTG, photo 5">
+          <button class="mini-fleche gauche" aria-label="Photo précédente">‹</button>
+          <button class="mini-fleche droite" aria-label="Photo suivante">›</button>
+          <div class="mini-points"></div>
+        </div>
+      <div class="carte-texte">
+        <p class="sur-titre">Gusto</p>
+        <span class="type-velo">Gravel</span>
+        <h3>GTG</h3>
+        <p>Le gravel carbone confortable, maniable et performant.</p>
+        <p class="prix">À partir de 2 590 €</p>
+        <span class="lien-dore">Voir la fiche →</span>
+      </div>
+    </a>
+
+    <!-- ===== OFFICINE MATTIO ===== -->
+    <a class="carte" href="fiche-vento.html" data-marque="mattio">
+      <div class="carte-diapo">
+          <img class="visible" src="images/officine-mattio-vento.jpg" alt="Officine Mattio Vento">
+          <img src="images/vento/vento-detail-1.jpg" alt="Officine Mattio Vento, photo 2">
+          <img src="images/vento/vento-detail-2.jpg" alt="Officine Mattio Vento, photo 3">
+          <img src="images/vento/vento-detail-3.jpg" alt="Officine Mattio Vento, photo 4">
+          <img src="images/vento/vento-detail-4.jpg" alt="Officine Mattio Vento, photo 5">
+          <button class="mini-fleche gauche" aria-label="Photo précédente">‹</button>
+          <button class="mini-fleche droite" aria-label="Photo suivante">›</button>
+          <div class="mini-points"></div>
+        </div>
+      <div class="carte-texte">
+        <p class="sur-titre">Officine Mattio</p>
+        <span class="type-velo">Route · Vitesse</span>
+        <h3>Vento</h3>
+        <p>Le dernier modèle de la marque, né pour la vitesse. Fabriqué à la main en Italie.</p>
+        <p class="prix">Montage sur mesure</p>
+        <span class="lien-dore">Voir la fiche →</span>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- Le script du filtre : au clic sur une marque, on cache les vélos des autres marques -->
+  <script>
+    const filtres = document.querySelectorAll('.filtre');
+    const cartes = document.querySelectorAll('.catalogue .carte');
+
+    filtres.forEach(function (bouton) {
+      bouton.addEventListener('click', function () {
+        const marque = bouton.dataset.marque;   // la marque écrite sur le bouton cliqué
+
+        // Le bouton cliqué devient doré, les autres redeviennent normaux
+        filtres.forEach(function (b) { b.classList.remove('actif'); });
+        bouton.classList.add('actif');
+
+        // On montre les cartes de cette marque (ou toutes), on cache les autres
+        cartes.forEach(function (carte) {
+          const aMontrer = (marque === 'toutes' || carte.dataset.marque === marque);
+          carte.classList.toggle('cachee', !aMontrer);
+        });
+      });
+    });
+
+    // Mini-diaporama de chaque carte : les flèches changent la photo
+    // sans ouvrir la fiche (la carte entière reste un lien vers la fiche)
+    document.querySelectorAll('.carte-diapo').forEach(function (diapo) {
+      const photos = diapo.querySelectorAll('img');
+      const zonePoints = diapo.querySelector('.mini-points');
+      let numero = 0;
+
+      // Un seul visuel ? On cache les flèches.
+      if (photos.length < 2) {
+        diapo.querySelectorAll('.mini-fleche').forEach(function (f) { f.remove(); });
+        return;
+      }
+
+      // Crée un petit trait par photo
+      photos.forEach(function (photo, i) {
+        const trait = document.createElement('span');
+        if (i === 0) trait.className = 'actif';
+        zonePoints.appendChild(trait);
+      });
+      const traits = zonePoints.querySelectorAll('span');
+
+      function montrer(nouveau) {
+        photos[numero].classList.remove('visible');
+        traits[numero].classList.remove('actif');
+        numero = (nouveau + photos.length) % photos.length;
+        photos[numero].classList.add('visible');
+        traits[numero].classList.add('actif');
+      }
+
+      diapo.querySelector('.mini-fleche.gauche').addEventListener('click', function (e) {
+        e.preventDefault();      // empêche d'ouvrir la fiche
+        e.stopPropagation();
+        montrer(numero - 1);
+      });
+      diapo.querySelector('.mini-fleche.droite').addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        montrer(numero + 1);
+      });
+    });
+  </script>
+
+  <!-- Menu ☰ du téléphone (programme commun) -->
+  <script src="menu.js"></script>
+
+</body>
+</html>

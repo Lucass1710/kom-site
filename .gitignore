@@ -1,0 +1,3 @@
+# Fichiers que Git ne doit PAS envoyer sur GitHub
+.DS_Store
+.claude/

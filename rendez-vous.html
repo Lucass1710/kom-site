@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!-- Ce fichier est la page « Rendez-vous » : comment contacter et venir au showroom. -->
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Version de test : demande aux moteurs de recherche (Google…) de ne pas afficher ce site. À retirer à la mise en ligne finale. -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>Rendez-vous – KOM Cycling Studio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Barre de menu (identique sur toutes les pages) -->
+  <header class="menu">
+    <a class="logo" href="index.html" aria-label="KOM Cycling Studio – accueil"><span class="logo-img"></span></a>
+    <!-- Bouton ☰ (visible seulement sur téléphone) -->
+    <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="liens">
+      <a href="velos.html">Les vélos</a>
+      <a href="#">Composer mon vélo</a>
+      <a href="studio.html">Le studio</a>
+      <!-- Menu déroulant : au survol, deux choix apparaissent -->
+      <div class="menu-deroulant">
+        <a href="nutrition.html" class="declencheur">Équipement</a>
+        <div class="sous-menu"><div class="sous-menu-boite">
+          <a href="nutrition.html">Nutrition</a>
+          <a href="textile.html">Textile</a>
+        </div></div>
+      </div>
+      <a href="rendez-vous.html" class="page-active">Rendez-vous</a>   <!-- en doré : la page actuelle -->
+    </nav>
+  </header>
+
+  <!-- Grand bandeau photo avec le titre par-dessus (textes repris du site actuel).
+       Photo provisoire (galerie du site actuel) : idéalement, une photo du showroom. -->
+  <section class="bandeau">
+    <img src="images/studio/drali-coucher-de-soleil.jpg" alt="Détail d'un vélo Drali au coucher du soleil">
+    <p class="sur-titre">Contact</p>
+    <h1>Prenez rendez-vous.</h1>
+    <p class="intro">
+      Le showroom ouvre uniquement sur rendez-vous.
+      Contactez-nous pour réserver votre créneau.
+    </p>
+  </section>
+
+  <!-- Les coordonnées (reprises du site actuel).
+       tel: et mailto: ouvrent directement le téléphone ou la messagerie du visiteur. -->
+  <section class="contact">
+
+    <div class="contact-bloc">
+      <p class="sur-titre">Téléphone</p>
+      <p><a href="tel:+33638822219">06 38 82 22 19</a></p>
+    </div>
+
+    <div class="contact-bloc">
+      <p class="sur-titre">E-mail</p>
+      <p><a href="mailto:komcyclingstudio@gmail.com">komcyclingstudio@gmail.com</a></p>
+    </div>
+
+    <div class="contact-bloc">
+      <p class="sur-titre">Adresse</p>
+      <p>
+        <a href="https://www.google.com/maps/search/?api=1&query=400+Rac+du+Col+de+l'Ange+83300+Draguignan" target="_blank" rel="noopener">
+          400 Rac du Col de l'Ange<br>83300 Draguignan
+        </a>
+      </p>
+    </div>
+
+    <div class="contact-bloc">
+      <p class="sur-titre">Instagram</p>
+      <p><a href="https://www.instagram.com/kom_cycling_studio/" target="_blank" rel="noopener">@kom_cycling_studio</a></p>
+    </div>
+
+  </section>
+
+  <!-- Boutons d'action -->
+  <section class="contact-action">
+    <a class="bouton" href="tel:+33638822219">Appeler le studio</a>
+    <a class="bouton" href="mailto:komcyclingstudio@gmail.com?subject=Demande%20de%20rendez-vous">Écrire un e-mail</a>
+    <p class="rdv-mention">Accueil uniquement sur rendez-vous · Draguignan</p>
+  </section>
+
+  <!-- Menu transparent sur la photo, noir quand on fait défiler (programme commun) -->
+  <script src="fiche.js"></script>
+
+  <!-- Menu ☰ du téléphone (programme commun) -->
+  <script src="menu.js"></script>
+
+</body>
+</html>

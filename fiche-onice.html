@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!-- Ce fichier est la fiche détaillée du Drali Milano Onice.
+     Pour créer la fiche d'un autre modèle : copier ce fichier, le renommer
+     et changer la photo, les textes et les caractéristiques. -->
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Version de test : demande aux moteurs de recherche (Google…) de ne pas afficher ce site. À retirer à la mise en ligne finale. -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>Drali Milano Onice – KOM Cycling Studio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Barre de menu (identique sur toutes les pages) -->
+  <header class="menu">
+    <a class="logo" href="index.html" aria-label="KOM Cycling Studio – accueil"><span class="logo-img"></span></a>
+    <!-- Bouton ☰ (visible seulement sur téléphone) -->
+    <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="liens">
+      <a href="velos.html" class="page-active">Les vélos</a>
+      <a href="#">Composer mon vélo</a>
+      <a href="studio.html">Le studio</a>
+      <!-- Menu déroulant : au survol, deux choix apparaissent -->
+      <div class="menu-deroulant">
+        <a href="nutrition.html" class="declencheur">Équipement</a>
+        <div class="sous-menu"><div class="sous-menu-boite">
+          <a href="nutrition.html">Nutrition</a>
+          <a href="textile.html">Textile</a>
+        </div></div>
+      </div>
+      <a href="rendez-vous.html">Rendez-vous</a>
+    </nav>
+  </header>
+
+  <!-- Photos qui défilent (sites officiels, provisoires : à remplacer par le kit média).
+       Pour ajouter une photo : ajouter une ligne <img src="..." alt="..."> ci-dessous. -->
+  <section class="fiche-diapo">
+    <img src="images/drali-onice.jpg" alt="Drali Milano Onice">
+    <img src="images/onice/onice-2.jpg" alt="Drali Milano Onice, photo 2">
+    <img src="images/onice/onice-3.jpg" alt="Drali Milano Onice, photo 3">
+    <img src="images/onice/onice-4.jpg" alt="Drali Milano Onice, photo 4">
+
+    <button class="fleche fleche-gauche" aria-label="Photo précédente">‹</button>
+    <button class="fleche fleche-droite" aria-label="Photo suivante">›</button>
+    <div class="points"></div>   <!-- les petits traits sont créés par fiche.js -->
+  </section>
+
+  <a class="retour" href="velos.html">← Retour au catalogue</a>
+
+  <!-- Contenu de la fiche (textes, caractéristiques et prix repris du site actuel) -->
+  <section class="fiche">
+
+    <!-- Colonne de gauche : présentation -->
+    <div>
+      <p class="sur-titre">Drali Milano</p>
+      <span class="type-velo">Route</span>
+      <h1>Onice</h1>
+      <p class="fiche-texte">
+        Un équilibre entre légèreté, rigidité et confort. Cadre « tube à tube » fabriqué en Italie.
+      </p>
+      <p class="fiche-prix"><span>À partir de</span>4 990 €</p>
+      <a class="bouton" href="rendez-vous.html">Demander des informations</a>
+    </div>
+
+    <!-- Colonne de droite : caractéristiques -->
+    <div>
+      <dl class="caracteristiques">
+        <div><dt>Groupe</dt><dd>SRAM Rival AXS ou Shimano 105 Di2</dd></div>
+        <div><dt>Roues</dt><dd>DT Swiss ER 1600</dd></div>
+        <div><dt>Cintre / potence</dt><dd>Control Tech</dd></div>
+        <div><dt>Coloris</dt><dd>4 coloris disponibles</dd></div>
+      </dl>
+      <div class="coloris">
+        <span>Arctic White</span>
+        <span>Woodland Green</span>
+        <span>Anthracite Black</span>
+        <span>Greyish Blue</span>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- Le programme commun aux fiches : menu + photos qui défilent -->
+  <script src="fiche.js"></script>
+
+  <!-- Menu ☰ du téléphone (programme commun) -->
+  <script src="menu.js"></script>
+
+</body>
+</html>
