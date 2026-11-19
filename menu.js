@@ -38,8 +38,9 @@ if (boutonBurger) {
 // ============================================================
 const TELEPHONE = '+33638822219';   // 06 38 82 22 19
 
-// Pas de barre sur la page Rendez-vous : elle a déjà ses propres boutons
-if (!location.pathname.endsWith('rendez-vous.html')) {
+// Pas de barre sur la page Rendez-vous : elle a déjà ses propres boutons.
+// (En ligne, Cloudflare retire le « .html » de l'adresse : on cherche donc juste « rendez-vous ».)
+if (!location.pathname.includes('rendez-vous')) {
   const barre = document.createElement('div');
   barre.className = 'barre-contact';
   barre.innerHTML =
