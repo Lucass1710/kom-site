@@ -1120,3 +1120,22 @@ img.carte-photo.fond-blanc { background: #fff; }   /* dans les cartes : panneau 
   .catalogue .carte-texte .sur-titre,
   .catalogue .type-velo { font-size: 0.75rem; }
 }
+
+/* ============================================================
+   PAGES NUTRITION ET TEXTILE
+   ============================================================ */
+/* Deux colonnes inversées : texte à gauche, photo à droite */
+.deux-colonnes.inverse img { order: 2; }
+
+/* Visuel encadré (ex. la tenue du Studio) : centré, avec un fin cadre doré */
+.visuel-cadre {
+  max-width: 520px;
+  margin: 0 auto 2.5rem;
+  border: 1px solid var(--or-leger);
+  padding: 1rem;
+}
+.visuel-cadre img { width: 100%; display: block; }
+
+@media (max-width: 1000px) {
+  .deux-colonnes.inverse img { order: 0; }   /* sur petit écran : la photo toujours au-dessus */
+}

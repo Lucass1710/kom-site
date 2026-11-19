@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Ce fichier est la page « Nutrition » (rubrique Équipement). Contenu à venir. -->
+<!-- Ce fichier est la page « Nutrition » (rubrique Équipement). Textes inspirés du site actuel. -->
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
@@ -13,7 +13,7 @@
 <body>
 
   <!-- Barre de menu (identique sur toutes les pages) -->
-  <header class="menu fond-noir">
+  <header class="menu">
     <a class="logo" href="index.html" aria-label="KOM Cycling Studio – accueil"><span class="logo-img"></span></a>
     <!-- Bouton ☰ (visible seulement sur téléphone) -->
     <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -33,13 +33,68 @@
     </nav>
   </header>
 
-  <!-- En-tête de la page -->
-  <section class="entete-page">
+  <!-- 1. Grand bandeau photo (photo 226ERS, provisoire) -->
+  <section class="bandeau">
+    <img src="images/equipement/nutrition-bandeau.jpg" alt="Cycliste en pleine sortie sur une route de campagne">
     <p class="sur-titre">Équipement</p>
-    <h1 class="titre-section">Nutrition</h1>
-    <p class="intro">Contenu à venir.</p>
+    <h1>Nutrition</h1>
+    <p class="intro">Bien manger pour aller plus loin : la nutrition sportive pour l'effort, disponible au showroom.</p>
   </section>
 
+  <!-- 2. La marque et ses trois familles de produits -->
+  <section class="section-studio">
+    <p class="sur-titre">Notre partenaire</p>
+    <h2 class="titre-section">226ERS</h2>
+    <p class="texte-centre" style="margin-bottom:4rem">
+      Gels énergétiques, barres et boissons pour vos sorties et votre préparation.
+      Les produits les plus demandés sont disponibles au showroom.
+    </p>
+    <div class="blocs trois">
+      <div class="bloc">
+        <p class="petit-titre">Pendant l'effort</p>
+        <h3>Gels</h3>
+        <ul class="liste-doree">
+          <li>High Energy Gel</li>
+          <li>High Fructose Gel</li>
+        </ul>
+      </div>
+      <div class="bloc">
+        <p class="petit-titre">Avant et pendant</p>
+        <h3>Barres</h3>
+        <ul class="liste-doree">
+          <li>Race Day : amandes et graines, fraise, BCAA</li>
+          <li>Vegan Oat Bar</li>
+        </ul>
+      </div>
+      <div class="bloc">
+        <p class="petit-titre">Hydratation</p>
+        <h3>Boissons</h3>
+        <ul class="liste-doree">
+          <li>High Fructose Energy Drink</li>
+          <li>Hydra Zero</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Photo + conseil personnalisé -->
+  <section class="deux-colonnes">
+    <img src="images/equipement/nutrition-gel.jpg" alt="Cycliste prenant un gel énergétique pendant l'effort">
+    <div>
+      <p class="sur-titre">Conseil</p>
+      <h2 class="titre-section">La bonne énergie, au bon moment.</h2>
+      <p class="texte">
+        Sortie courte, longue journée en montagne ou course : nous vous aidons à choisir
+        les produits adaptés à votre pratique. N'hésitez pas à nous contacter pour vérifier
+        la disponibilité d'un produit au showroom.
+      </p>
+      <a class="bouton" href="rendez-vous.html">Nous demander conseil</a>
+      <p style="margin-top:2rem"><a class="lien-externe" href="https://www.226ers.com/fr" target="_blank" rel="noopener">Toute la gamme sur 226ers.com ↗</a></p>
+    </div>
+  </section>
+
+  <!-- Menu transparent sur la photo, noir quand on fait défiler (programme commun) -->
+  <script src="fiche.js"></script>
   <!-- Menu ☰ du téléphone (programme commun) -->
   <script src="menu.js"></script>
 

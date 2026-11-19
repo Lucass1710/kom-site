@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Ce fichier est la page « Textile » (rubrique Équipement). Contenu à venir. -->
+<!-- Ce fichier est la page « Textile » (rubrique Équipement). Textes inspirés du site actuel. -->
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
@@ -13,7 +13,7 @@
 <body>
 
   <!-- Barre de menu (identique sur toutes les pages) -->
-  <header class="menu fond-noir">
+  <header class="menu">
     <a class="logo" href="index.html" aria-label="KOM Cycling Studio – accueil"><span class="logo-img"></span></a>
     <!-- Bouton ☰ (visible seulement sur téléphone) -->
     <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -33,13 +33,68 @@
     </nav>
   </header>
 
-  <!-- En-tête de la page -->
-  <section class="entete-page">
+  <!-- 1. Grand bandeau photo (photo OUTWET, provisoire) -->
+  <section class="bandeau">
+    <img src="images/equipement/textile-bandeau.jpg" alt="Cycliste en tenue sombre sur fond noir">
     <p class="sur-titre">Équipement</p>
-    <h1 class="titre-section">Textile</h1>
-    <p class="intro">Contenu à venir.</p>
+    <h1>Textile</h1>
+    <p class="intro">Du textile technique pour toutes les conditions, et des tenues personnalisées à vos couleurs.</p>
   </section>
 
+  <!-- 2. GripGrab : photo à gauche, texte à droite -->
+  <section class="deux-colonnes">
+    <img src="images/equipement/gripgrab.jpg" alt="Cycliste au coucher du soleil, équipée GripGrab">
+    <div>
+      <p class="sur-titre">Danemark · Textile technique et accessoires</p>
+      <h2 class="titre-section">GripGrab</h2>
+      <p class="texte">
+        La marque danoise de textile technique et d'accessoires pour le cyclisme :
+        gants, couvre-chaussures, vestes et sous-vêtements pour rouler par tous les temps.
+      </p>
+      <p class="petit-titre">Le tarif « Studio »</p>
+      <ul class="liste-doree">
+        <li>Parcourez les produits sur le site de la marque</li>
+        <li>Contactez-nous avec votre sélection</li>
+        <li>Nous commandons pour vous, au tarif préférentiel du Studio</li>
+      </ul>
+      <a class="bouton" href="rendez-vous.html">Commander au tarif Studio</a>
+      <p style="margin-top:2rem"><a class="lien-externe" href="https://www.gripgrab.com/" target="_blank" rel="noopener">Voir les produits sur gripgrab.com ↗</a></p>
+    </div>
+  </section>
+
+  <!-- 3. OUTWET : texte à gauche, photo à droite -->
+  <section class="deux-colonnes inverse">
+    <img src="images/equipement/outwet.jpg" alt="Cycliste de dos en maillot OUTWET dans la montagne">
+    <div>
+      <p class="sur-titre">Italie · Textile personnalisable</p>
+      <h2 class="titre-section">OUTWET</h2>
+      <p class="texte">
+        La marque italienne spécialiste du « custom ». Vous êtes un groupe d'amis, un club
+        ou une association à la recherche de tenues haut de gamme à un tarif accessible ?
+        Contactez-nous et profitez des tarifs du Studio.
+      </p>
+      <ul class="liste-doree">
+        <li>Maillots, cuissards, gilets et vestes à vos couleurs</li>
+        <li>Qualité italienne haut de gamme</li>
+        <li>Accompagnement du projet par le Studio</li>
+      </ul>
+      <a class="bouton" href="rendez-vous.html">Nous contacter pour un projet</a>
+      <p style="margin-top:2rem"><a class="lien-externe" href="https://www.outwet.it/" target="_blank" rel="noopener">Découvrir OUTWET sur outwet.it ↗</a></p>
+    </div>
+  </section>
+
+  <!-- 4. La tenue du Studio (visuel repris du site actuel) -->
+  <section class="section-studio">
+    <p class="sur-titre">Fait par OUTWET</p>
+    <h2 class="titre-section">La tenue du Studio</h2>
+    <div class="visuel-cadre">
+      <img src="images/equipement/tenue-kom-outwet.jpg" alt="Maillot manches longues et gilet aux couleurs du KOM Cycling Studio, par OUTWET">
+    </div>
+    <p class="texte-centre">Le maillot manches longues et le gilet aux couleurs du KOM Cycling Studio.</p>
+  </section>
+
+  <!-- Menu transparent sur la photo, noir quand on fait défiler (programme commun) -->
+  <script src="fiche.js"></script>
   <!-- Menu ☰ du téléphone (programme commun) -->
   <script src="menu.js"></script>
 
