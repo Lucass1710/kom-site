@@ -1249,3 +1249,19 @@ img.carte-photo.fond-blanc { background: #fff; }   /* dans les cartes : panneau 
   justify-content: center;
   margin: 0.8rem 0 1rem;
 }
+
+/* Pastilles de couleur : un échantillon de la vraie peinture (fiches Drali) */
+.coloris span.avec-pastille {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+.pastille {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;                    /* petit rond */
+  background-size: 260% auto;            /* on zoome sur la partie peinte de l'échantillon */
+  background-position: 70% 50%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  flex-shrink: 0;
+}

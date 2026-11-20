@@ -35,18 +35,47 @@
     </nav>
   </header>
 
-  <!-- Photos qui défilent (sites officiels, provisoires : à remplacer par le kit média).
-       Pour ajouter une photo : ajouter une ligne <img src="..." alt="..."> ci-dessous. -->
+  <!-- Photos qui défilent, rangées par coloris (site Gusto, provisoires : à remplacer par le kit média).
+       Chaque photo porte data-coloris : seules celles du coloris choisi s'affichent.
+       Pour ajouter une photo : ajouter une ligne <img src="..." alt="..." data-coloris="..."> ci-dessous. -->
   <section class="fiche-diapo">
-    <img src="images/gusto-gtg.jpg" alt="Gusto GTG">
-    <img src="images/gtg/gtg-2.jpg" alt="Gusto GTG, photo 2">
-    <img src="images/gtg/gtg-3.jpg" alt="Gusto GTG, photo 3">
-    <img src="images/gtg/gtg-4.jpg" alt="Gusto GTG, photo 4">
-    <img src="images/gtg/gtg-5.jpg" alt="Gusto GTG, photo 5">
+    <!-- Blanc nacré -->
+    <img src="images/gusto-gtg.jpg" alt="Gusto GTG Blanc nacré" data-coloris="blanc-nacre">
+    <img src="images/gtg/blanc-nacre-2.jpg" alt="GTG Blanc nacré, autre vue" data-coloris="blanc-nacre">
+    <img src="images/gtg/blanc-nacre-3.jpg" alt="GTG Blanc nacré, fourche" data-coloris="blanc-nacre">
+    <img src="images/gtg/blanc-nacre-4.jpg" alt="GTG Blanc nacré, détail du cadre" data-coloris="blanc-nacre">
+    <img src="images/gtg/blanc-nacre-5.jpg" alt="GTG Blanc nacré, détail du cadre" data-coloris="blanc-nacre">
+    <img src="images/gtg/blanc-nacre-6.jpg" alt="GTG Blanc nacré, vue de face" data-coloris="blanc-nacre">
+    <img src="images/gtg/blanc-nacre-7.jpg" alt="GTG Blanc nacré, cintre" data-coloris="blanc-nacre">
+    <img src="images/gtg/blanc-nacre-8.jpg" alt="GTG Blanc nacré, potence" data-coloris="blanc-nacre">
+    <!-- Vert Forêt -->
+    <img src="images/gtg/vert-foret-1.jpg" alt="GTG Vert Forêt, vélo entier" data-coloris="vert-foret">
+    <img src="images/gtg/vert-foret-2.jpg" alt="GTG Vert Forêt, autre vue" data-coloris="vert-foret">
+    <img src="images/gtg/vert-foret-3.jpg" alt="GTG Vert Forêt, détail" data-coloris="vert-foret">
+    <img src="images/gtg/vert-foret-4.jpg" alt="GTG Vert Forêt, détail du cadre" data-coloris="vert-foret">
+    <!-- Or Team -->
+    <img src="images/gtg/or-team-1.jpg" alt="GTG Or Team, vélo entier" data-coloris="or-team">
+    <img src="images/gtg/or-team-2.jpg" alt="GTG Or Team, autre vue" data-coloris="or-team">
+    <img src="images/gtg/or-team-3.jpg" alt="GTG Or Team, détail du cadre" data-coloris="or-team">
+    <!-- Noir Profond -->
+    <img src="images/gtg/noir-profond-1.jpg" alt="GTG Noir Profond, vélo entier" data-coloris="noir-profond">
+    <img src="images/gtg/noir-profond-2.jpg" alt="GTG Noir Profond, autre vue" data-coloris="noir-profond">
+    <img src="images/gtg/noir-profond-3.jpg" alt="GTG Noir Profond, cintre" data-coloris="noir-profond">
 
     <button class="fleche fleche-gauche" aria-label="Photo précédente">‹</button>
     <button class="fleche fleche-droite" aria-label="Photo suivante">›</button>
     <div class="points"></div>   <!-- les petits traits sont créés par fiche.js -->
+  </section>
+
+  <!-- Choix du coloris, juste sous les photos : choisir une couleur change les photos au-dessus -->
+  <section class="choix-coloris">
+    <p class="consigne-coloris">Choisissez un coloris</p>
+    <div class="coloris">
+      <button type="button" data-coloris="blanc-nacre" class="actif">Blanc nacré</button>
+      <button type="button" data-coloris="noir-profond">Noir Profond</button>
+      <button type="button" data-coloris="or-team">Or Team</button>
+      <button type="button" data-coloris="vert-foret">Vert Forêt</button>
+    </div>
   </section>
 
   <a class="retour" href="velos.html">← Retour au catalogue</a>
@@ -74,12 +103,6 @@
         <div><dt>Roues</dt><dd>Carbone 40 Attaque</dd></div>
         <div><dt>Coloris</dt><dd>4 couleurs disponibles</dd></div>
       </dl>
-      <div class="coloris">
-        <span>Blanc nacré</span>
-        <span>Noir Profond</span>
-        <span>Or Team</span>
-        <span>Vert Forêt</span>
-      </div>
     </div>
 
   </section>
