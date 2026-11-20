@@ -1447,3 +1447,27 @@ html.intro-finie .intro-logo { opacity: 0; pointer-events: none; }
 .intro-nom { font-size: 2rem; font-weight: 600; letter-spacing: 0.35em; margin: 1.6rem 0 0.2rem 0.35em; }
 .intro-sous-titre { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.45em; margin-left: 0.45em; animation-delay: 1.6s; }
 @keyframes apparaitre { to { opacity: 1; } }
+
+/* ============================================================
+   CORRECTIF : menu ☰ fermé sur téléphone
+   Les liens Nutrition / Textile restaient « visibles » pour le doigt
+   (même invisibles à l'œil) et interceptaient les appuis au milieu de l'écran.
+   Menu fermé = plus aucun lien du menu ne peut être touché.
+   ============================================================ */
+@media (max-width: 700px) {
+  .menu:not(.ouvert) .liens,
+  .menu:not(.ouvert) .liens * {
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+}
+
+/* Sécurité : quoi qu'il arrive, l'intro disparaît d'elle-même au bout de 4 s
+   (même si le petit programme ne s'exécutait pas) */
+html.avec-intro .intro-logo { animation: fin-intro-securite 0.6s ease 4s forwards; }
+@keyframes fin-intro-securite { to { opacity: 0; visibility: hidden; pointer-events: none; } }
+
+/* CORRECTIF : dans le diaporama de l'accueil, seules les commandes de la photo affichée
+   peuvent être touchées (sinon « Découvrir » ouvrait parfois la fiche d'un autre vélo) */
+.diapo { pointer-events: none; }
+.diapo.visible { pointer-events: auto; }
