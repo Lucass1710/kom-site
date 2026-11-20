@@ -1672,3 +1672,10 @@ h1, h2, h3,
   text-align: center;
   line-height: 1.6;
 }
+
+/* ============================================================
+   G. CARTES VÉLO (catalogue) : un voile blanc léger, un peu opaque,
+   en plus du cadre noir, pour que chaque vélo ressorte du fond.
+   Plus le dernier chiffre est grand, plus le voile est blanc (0 à 1).
+   ============================================================ */
+.carte { background: rgba(255, 255, 255, 0.1); }
