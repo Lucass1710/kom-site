@@ -60,8 +60,17 @@ if (diapo) {
   diapo.querySelector('.fleche-gauche').addEventListener('click', function () { montrer(numero - 1); relancer(); });
   diapo.querySelector('.fleche-droite').addEventListener('click', function () { montrer(numero + 1); relancer(); });
 
-  // 3) Coloris cliquables (si la fiche en a) : chaque photo porte data-coloris="...",
-  //    chaque bouton aussi. Choisir un coloris n'affiche que ses photos.
+  // 3) Coloris cliquables (si la fiche en a) : chaque photo porte data-coloris="..."
+  //    (ou "tous" si elle ne montre pas un coloris précis), chaque bouton aussi.
+  //    data-fond indique le type de photo : "noir" (studio sombre, par défaut),
+  //    "ambiance" (en extérieur) ou "blanc" (catalogue sur fond blanc).
+  //    Les photos sur fond noir passent TOUJOURS en premier, le fond blanc en dernier.
+  const rangFond = { noir: 0, ambiance: 1, blanc: 2 };
+  function trierParFond(liste) {
+    return liste.slice().sort(function (a, b) {
+      return (rangFond[a.dataset.fond] || 0) - (rangFond[b.dataset.fond] || 0);
+    });
+  }
   const boutonsColoris = [...document.querySelectorAll('.coloris button[data-coloris]')];
   function choisirColoris(nom) {
     boutonsColoris.forEach(function (b) {
@@ -69,8 +78,11 @@ if (diapo) {
       b.classList.toggle('actif', choisi);
       b.setAttribute('aria-pressed', choisi);
     });
-    const liste = toutesLesPhotos.filter(function (p) { return p.dataset.coloris === nom; });
-    preparer(liste.length ? liste : toutesLesPhotos);
+    // « tous » = toutes les photos ; sinon seulement celles du coloris choisi
+    const liste = nom === 'tous'
+      ? toutesLesPhotos
+      : toutesLesPhotos.filter(function (p) { return p.dataset.coloris === nom; });
+    preparer(trierParFond(liste.length ? liste : toutesLesPhotos));
     relancer();
   }
   boutonsColoris.forEach(function (b) {
@@ -80,5 +92,5 @@ if (diapo) {
   // Au chargement : le coloris marqué « actif » dans la page, sinon toutes les photos
   const depart = boutonsColoris.find(function (b) { return b.classList.contains('actif'); });
   if (depart) choisirColoris(depart.dataset.coloris);
-  else { preparer(toutesLesPhotos); relancer(); }
+  else { preparer(trierParFond(toutesLesPhotos)); relancer(); }
 }

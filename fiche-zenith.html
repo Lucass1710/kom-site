@@ -35,28 +35,34 @@
     </nav>
   </header>
 
-  <!-- Photos qui défilent (sites officiels, provisoires : à remplacer par le kit média).
-       Pour ajouter une photo : ajouter une ligne <img src="..." alt="..."> ci-dessous. -->
+  <!-- Photos qui défilent, rangées par coloris (site Drali, provisoires : à remplacer par le kit média).
+       data-coloris : le coloris montré ("tous" = photo générale). data-fond : "noir" (par défaut),
+       "ambiance" (extérieur) ou "blanc" (catalogue). Les fonds noirs s'affichent toujours en premier. -->
   <section class="fiche-diapo">
-    <img src="images/drali-zenith.jpg" alt="Drali Milano Zenith">
-    <img src="images/zenith/zenith-2.jpg" alt="Drali Milano Zenith, photo 2">
-    <img src="images/zenith/zenith-3.jpg" alt="Drali Milano Zenith, photo 3">
-    <img src="images/zenith/zenith-4.jpg" alt="Drali Milano Zenith, photo 4">
-    <img src="images/zenith/zenith-5.jpg" alt="Drali Milano Zenith, photo 5">
+    <img src="images/drali-zenith.jpg" alt="Zenith Aubergine Sahara en studio" data-coloris="aubergine-sahara">
+    <img src="images/zenith/zenith-2.jpg" alt="Zenith Aubergine Sahara, transmission" data-coloris="aubergine-sahara">
+    <img src="images/zenith/zenith-3.jpg" alt="Zenith Aubergine Sahara, détail" data-coloris="aubergine-sahara">
+    <img src="images/zenith/zenith-4.jpg" alt="Zenith en pleine nature" data-coloris="tous" data-fond="ambiance">
+    <img src="images/zenith/zenith-5.jpg" alt="Zenith en pleine nature" data-coloris="tous" data-fond="ambiance">
+    <img src="images/zenith/aubergine-sahara-blanc.jpg" alt="Zenith Aubergine Sahara" data-coloris="aubergine-sahara" data-fond="blanc">
+    <img src="images/zenith/enamel-oxford-blanc.jpg" alt="Zenith Enamel Oxford" data-coloris="enamel-oxford" data-fond="blanc">
+    <img src="images/zenith/blue-cimabue-blanc.jpg" alt="Zenith Blue Cimabue" data-coloris="blue-cimabue" data-fond="blanc">
+    <img src="images/zenith/black-blanc.jpg" alt="Zenith Black" data-coloris="black" data-fond="blanc">
 
     <button class="fleche fleche-gauche" aria-label="Photo précédente">‹</button>
     <button class="fleche fleche-droite" aria-label="Photo suivante">›</button>
     <div class="points"></div>   <!-- les petits traits sont créés par fiche.js -->
   </section>
 
-  <!-- Coloris disponibles, juste sous les photos (pastilles = échantillons de la vraie peinture Drali) -->
+  <!-- Choix du coloris, juste sous les photos (pastilles = échantillons de la vraie peinture Drali) -->
   <section class="choix-coloris">
-    <p class="consigne-coloris">Coloris disponibles</p>
+    <p class="consigne-coloris">Choisissez un coloris</p>
     <div class="coloris">
-      <span class="avec-pastille"><i class="pastille" style="background-image:url(images/pastilles/zenith-aubergine-sahara.png)"></i>Aubergine Sahara</span>
-      <span class="avec-pastille"><i class="pastille" style="background-image:url(images/pastilles/zenith-enamel-oxford.png)"></i>Enamel Oxford</span>
-      <span class="avec-pastille"><i class="pastille" style="background-image:url(images/pastilles/zenith-blue-cimabue.png)"></i>Blue Cimabue</span>
-      <span class="avec-pastille"><i class="pastille" style="background-image:url(images/pastilles/zenith-black.png)"></i>Black</span>
+      <button type="button" data-coloris="tous" class="actif">Tout voir</button>
+      <button type="button" class="avec-pastille" data-coloris="aubergine-sahara"><i class="pastille" style="background-image:url(images/pastilles/zenith-aubergine-sahara.png)"></i>Aubergine Sahara</button>
+      <button type="button" class="avec-pastille" data-coloris="enamel-oxford"><i class="pastille" style="background-image:url(images/pastilles/zenith-enamel-oxford.png)"></i>Enamel Oxford</button>
+      <button type="button" class="avec-pastille" data-coloris="blue-cimabue"><i class="pastille" style="background-image:url(images/pastilles/zenith-blue-cimabue.png)"></i>Blue Cimabue</button>
+      <button type="button" class="avec-pastille" data-coloris="black"><i class="pastille" style="background-image:url(images/pastilles/zenith-black.png)"></i>Black</button>
     </div>
   </section>
 

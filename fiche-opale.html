@@ -35,28 +35,34 @@
     </nav>
   </header>
 
-  <!-- Photos qui défilent (sites officiels, provisoires : à remplacer par le kit média).
-       Pour ajouter une photo : ajouter une ligne <img src="..." alt="..."> ci-dessous. -->
+  <!-- Photos qui défilent, rangées par coloris (site Drali, provisoires : à remplacer par le kit média).
+       data-coloris : le coloris montré ("tous" = photo générale). data-fond : "noir" (par défaut),
+       "ambiance" (extérieur) ou "blanc" (catalogue). Les fonds noirs s'affichent toujours en premier. -->
   <section class="fiche-diapo">
-    <img src="images/drali-opale.jpg" alt="Drali Milano Opale">
-    <img src="images/opale/opale-2.jpg" alt="Drali Milano Opale, photo 2">
-    <img src="images/opale/opale-3.jpg" alt="Drali Milano Opale, photo 3">
-    <img src="images/opale/opale-4.jpg" alt="Drali Milano Opale, photo 4">
-    <img src="images/opale/opale-5.jpg" alt="Drali Milano Opale, photo 5">
+    <img src="images/drali-opale.jpg" alt="Opale Light Grey en studio" data-coloris="light-grey">
+    <img src="images/opale/opale-2.jpg" alt="Opale, détail carbone" data-coloris="tous">
+    <img src="images/opale/opale-3.jpg" alt="Opale, détail carbone" data-coloris="tous">
+    <img src="images/opale/opale-4.jpg" alt="Opale, détail" data-coloris="tous">
+    <img src="images/opale/opale-5.jpg" alt="Opale en sortie" data-coloris="tous" data-fond="ambiance">
+    <img src="images/opale/azzurro-drali-blanc.jpg" alt="Opale Azzurro Drali" data-coloris="azzurro-drali" data-fond="blanc">
+    <img src="images/opale/ud-carbon-natural-blanc.jpg" alt="Opale UD Carbon Natural" data-coloris="ud-carbon-natural" data-fond="blanc">
+    <img src="images/opale/light-grey-blanc.jpg" alt="Opale Light Grey" data-coloris="light-grey" data-fond="blanc">
+    <img src="images/opale/toreador-red-blanc.jpg" alt="Opale Toreador Red" data-coloris="toreador-red" data-fond="blanc">
 
     <button class="fleche fleche-gauche" aria-label="Photo précédente">‹</button>
     <button class="fleche fleche-droite" aria-label="Photo suivante">›</button>
     <div class="points"></div>   <!-- les petits traits sont créés par fiche.js -->
   </section>
 
-  <!-- Coloris disponibles, juste sous les photos (pastilles = échantillons de la vraie peinture Drali) -->
+  <!-- Choix du coloris, juste sous les photos (pastilles = échantillons de la vraie peinture Drali) -->
   <section class="choix-coloris">
-    <p class="consigne-coloris">Coloris disponibles</p>
+    <p class="consigne-coloris">Choisissez un coloris</p>
     <div class="coloris">
-      <span class="avec-pastille"><i class="pastille" style="background-image:url(images/pastilles/opale-azzurro-drali.png)"></i>Azzurro Drali</span>
-      <span class="avec-pastille"><i class="pastille" style="background-image:url(images/pastilles/opale-ud-carbon-natural.png)"></i>UD Carbon Natural</span>
-      <span class="avec-pastille"><i class="pastille" style="background-image:url(images/pastilles/opale-light-grey.png)"></i>Light Grey</span>
-      <span class="avec-pastille"><i class="pastille" style="background-image:url(images/pastilles/opale-toreador-red.png)"></i>Toreador Red</span>
+      <button type="button" data-coloris="tous" class="actif">Tout voir</button>
+      <button type="button" class="avec-pastille" data-coloris="azzurro-drali"><i class="pastille" style="background-image:url(images/pastilles/opale-azzurro-drali.png)"></i>Azzurro Drali</button>
+      <button type="button" class="avec-pastille" data-coloris="ud-carbon-natural"><i class="pastille" style="background-image:url(images/pastilles/opale-ud-carbon-natural.png)"></i>UD Carbon Natural</button>
+      <button type="button" class="avec-pastille" data-coloris="light-grey"><i class="pastille" style="background-image:url(images/pastilles/opale-light-grey.png)"></i>Light Grey</button>
+      <button type="button" class="avec-pastille" data-coloris="toreador-red"><i class="pastille" style="background-image:url(images/pastilles/opale-toreador-red.png)"></i>Toreador Red</button>
     </div>
   </section>
 

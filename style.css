@@ -1251,7 +1251,7 @@ img.carte-photo.fond-blanc { background: #fff; }   /* dans les cartes : panneau 
 }
 
 /* Pastilles de couleur : un échantillon de la vraie peinture (fiches Drali) */
-.coloris span.avec-pastille {
+.coloris .avec-pastille {
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
@@ -1265,3 +1265,6 @@ img.carte-photo.fond-blanc { background: #fff; }   /* dans les cartes : panneau 
   border: 1px solid rgba(255, 255, 255, 0.25);
   flex-shrink: 0;
 }
+
+/* Photos catalogue sur fond blanc : on montre le vélo en entier (sans le recadrer) */
+.fiche-diapo img[data-fond="blanc"] { object-fit: contain; background: #fff; }

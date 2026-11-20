@@ -35,27 +35,33 @@
     </nav>
   </header>
 
-  <!-- Photos qui défilent (sites officiels, provisoires : à remplacer par le kit média).
-       Pour ajouter une photo : ajouter une ligne <img src="..." alt="..."> ci-dessous. -->
+  <!-- Photos qui défilent, rangées par coloris (site Drali, provisoires : à remplacer par le kit média).
+       data-coloris : le coloris montré ("tous" = photo générale). data-fond : "noir" (par défaut),
+       "ambiance" (extérieur) ou "blanc" (catalogue). Les fonds noirs s'affichent toujours en premier. -->
   <section class="fiche-diapo">
-    <img src="images/drali-onice.jpg" alt="Drali Milano Onice">
-    <img src="images/onice/onice-2.jpg" alt="Drali Milano Onice, photo 2">
-    <img src="images/onice/onice-3.jpg" alt="Drali Milano Onice, photo 3">
-    <img src="images/onice/onice-4.jpg" alt="Drali Milano Onice, photo 4">
+    <img src="images/drali-onice.jpg" alt="Onice Woodland Green" data-coloris="woodland-green">
+    <img src="images/onice/onice-2.jpg" alt="Onice Woodland Green, détail" data-coloris="woodland-green">
+    <img src="images/onice/onice-3.jpg" alt="Onice Woodland Green, cockpit" data-coloris="woodland-green">
+    <img src="images/onice/onice-4.jpg" alt="Onice en sortie" data-coloris="tous" data-fond="ambiance">
+    <img src="images/onice/arctic-white-blanc.jpg" alt="Onice Arctic White" data-coloris="arctic-white" data-fond="blanc">
+    <img src="images/onice/woodland-green-blanc.jpg" alt="Onice Woodland Green" data-coloris="woodland-green" data-fond="blanc">
+    <img src="images/onice/anthracite-black-blanc.jpg" alt="Onice Anthracite Black" data-coloris="anthracite-black" data-fond="blanc">
+    <img src="images/onice/greyish-blue-blanc.jpg" alt="Onice Greyish Blue" data-coloris="greyish-blue" data-fond="blanc">
 
     <button class="fleche fleche-gauche" aria-label="Photo précédente">‹</button>
     <button class="fleche fleche-droite" aria-label="Photo suivante">›</button>
     <div class="points"></div>   <!-- les petits traits sont créés par fiche.js -->
   </section>
 
-  <!-- Coloris disponibles, juste sous les photos (pastilles = échantillons de la vraie peinture Drali) -->
+  <!-- Choix du coloris, juste sous les photos (pastilles = échantillons de la vraie peinture Drali) -->
   <section class="choix-coloris">
-    <p class="consigne-coloris">Coloris disponibles</p>
+    <p class="consigne-coloris">Choisissez un coloris</p>
     <div class="coloris">
-      <span class="avec-pastille"><i class="pastille" style="background-image:url(images/pastilles/onice-arctic-white.png)"></i>Arctic White</span>
-      <span class="avec-pastille"><i class="pastille" style="background-image:url(images/pastilles/onice-woodland-green.png)"></i>Woodland Green</span>
-      <span class="avec-pastille"><i class="pastille" style="background-image:url(images/pastilles/onice-anthracite-black.png)"></i>Anthracite Black</span>
-      <span class="avec-pastille"><i class="pastille" style="background-image:url(images/pastilles/onice-greyish-blue.png)"></i>Greyish Blue</span>
+      <button type="button" data-coloris="tous" class="actif">Tout voir</button>
+      <button type="button" class="avec-pastille" data-coloris="arctic-white"><i class="pastille" style="background-image:url(images/pastilles/onice-arctic-white.png)"></i>Arctic White</button>
+      <button type="button" class="avec-pastille" data-coloris="woodland-green"><i class="pastille" style="background-image:url(images/pastilles/onice-woodland-green.png)"></i>Woodland Green</button>
+      <button type="button" class="avec-pastille" data-coloris="anthracite-black"><i class="pastille" style="background-image:url(images/pastilles/onice-anthracite-black.png)"></i>Anthracite Black</button>
+      <button type="button" class="avec-pastille" data-coloris="greyish-blue"><i class="pastille" style="background-image:url(images/pastilles/onice-greyish-blue.png)"></i>Greyish Blue</button>
     </div>
   </section>
 

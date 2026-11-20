@@ -35,26 +35,37 @@
     </nav>
   </header>
 
-  <!-- Photos qui défilent (sites officiels, provisoires : à remplacer par le kit média).
-       Pour ajouter une photo : ajouter une ligne <img src="..." alt="..."> ci-dessous. -->
+  <!-- Photos qui défilent, rangées par coloris (site Drali, provisoires : à remplacer par le kit média).
+       data-coloris : le coloris montré ("tous" = photo générale). data-fond : "noir" (par défaut),
+       "ambiance" (extérieur) ou "blanc" (catalogue). Les fonds noirs s'affichent toujours en premier. -->
   <section class="fiche-diapo">
-    <img src="images/drali-iridio-team-edition.jpg" alt="Drali Milano Iridio">
-    <img src="images/iridio/iridio-2.jpg" alt="Drali Milano Iridio, photo 2">
-    <img src="images/iridio/iridio-3.jpg" alt="Drali Milano Iridio, photo 3">
+    <img src="images/drali-iridio-team-edition.jpg" alt="Iridio Team Edition" data-coloris="tous">
+    <img src="images/iridio/iridio-2.jpg" alt="Iridio, détail" data-coloris="tous">
+    <img src="images/iridio/iridio-3.jpg" alt="Iridio, détail" data-coloris="tous">
+    <img src="images/iridio/ice-core-ambiance-1.jpg" alt="Iridio Ice Core en extérieur" data-coloris="ice-core" data-fond="ambiance">
+    <img src="images/iridio/ice-core-ambiance-2.jpg" alt="Iridio Ice Core, détail" data-coloris="ice-core" data-fond="ambiance">
+    <img src="images/iridio/ice-core-ambiance-3.jpg" alt="Iridio Ice Core en sortie" data-coloris="ice-core" data-fond="ambiance">
+    <img src="images/iridio/ice-core-ambiance-4.jpg" alt="Iridio Ice Core en sortie" data-coloris="ice-core" data-fond="ambiance">
+    <img src="images/iridio/ice-core-ambiance-5.jpg" alt="Iridio Ice Core en sortie" data-coloris="ice-core" data-fond="ambiance">
+    <img src="images/iridio/midnight-prism-blanc.jpg" alt="Iridio Midnight Prism" data-coloris="midnight-prism" data-fond="blanc">
+    <img src="images/iridio/sunrise-blanc.jpg" alt="Iridio Sunrise" data-coloris="sunrise" data-fond="blanc">
+    <img src="images/iridio/noir-blanc.jpg" alt="Iridio Noir" data-coloris="noir" data-fond="blanc">
+    <img src="images/iridio/ice-core-blanc.jpg" alt="Iridio Ice Core" data-coloris="ice-core" data-fond="blanc">
 
     <button class="fleche fleche-gauche" aria-label="Photo précédente">‹</button>
     <button class="fleche fleche-droite" aria-label="Photo suivante">›</button>
     <div class="points"></div>   <!-- les petits traits sont créés par fiche.js -->
   </section>
 
-  <!-- Coloris disponibles, juste sous les photos (pastilles = échantillons de la vraie peinture Drali) -->
+  <!-- Choix du coloris, juste sous les photos (pastilles = échantillons de la vraie peinture Drali) -->
   <section class="choix-coloris">
-    <p class="consigne-coloris">Coloris disponibles</p>
+    <p class="consigne-coloris">Choisissez un coloris</p>
     <div class="coloris">
-      <span class="avec-pastille"><i class="pastille" style="background-image:url(images/pastilles/iridio-midnight-prism.png)"></i>Midnight Prism</span>
-      <span class="avec-pastille"><i class="pastille" style="background-image:url(images/pastilles/iridio-sunrise.png)"></i>Sunrise</span>
-      <span class="avec-pastille"><i class="pastille" style="background-image:url(images/pastilles/iridio-noir.png)"></i>Noir</span>
-      <span class="avec-pastille"><i class="pastille" style="background-image:url(images/pastilles/iridio-ice-core.png)"></i>Ice Core</span>
+      <button type="button" data-coloris="tous" class="actif">Tout voir</button>
+      <button type="button" class="avec-pastille" data-coloris="midnight-prism"><i class="pastille" style="background-image:url(images/pastilles/iridio-midnight-prism.png)"></i>Midnight Prism</button>
+      <button type="button" class="avec-pastille" data-coloris="sunrise"><i class="pastille" style="background-image:url(images/pastilles/iridio-sunrise.png)"></i>Sunrise</button>
+      <button type="button" class="avec-pastille" data-coloris="noir"><i class="pastille" style="background-image:url(images/pastilles/iridio-noir.png)"></i>Noir</button>
+      <button type="button" class="avec-pastille" data-coloris="ice-core"><i class="pastille" style="background-image:url(images/pastilles/iridio-ice-core.png)"></i>Ice Core</button>
     </div>
   </section>
 
