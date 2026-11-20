@@ -1336,9 +1336,9 @@ body::before {
   inset: 0;
   z-index: -10;                       /* tout au fond, derrière le contenu */
   pointer-events: none;
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),   /* voile pour la lisibilité */
-    #000 url(images/fonds/fond-sable.jpg) center / cover no-repeat;
+  /* fond-sable-clair.jpg = la même texture de sable, éclaircie en gris ardoise.
+     (L'ancienne version très noire reste disponible : fond-sable.jpg) */
+  background: #444 url(images/fonds/fond-sable-clair.jpg) center / cover no-repeat;
 }
 /* Les grandes zones pleine largeur laissent voir le fond (au lieu d'un noir plat) */
 .contact-bloc, .bloc { background: rgba(0, 0, 0, 0.55); }
@@ -1632,4 +1632,18 @@ html.avec-intro .intro-logo { animation: fin-intro-securite 0.6s ease 4s forward
   .produit.inverse .produit-visuel { order: 0; }   /* sur téléphone : la photo toujours au-dessus */
   .produit-texte h3 { font-size: 2rem; }
   .gouts button { min-height: 44px; }
+}
+
+/* ============================================================
+   D. CADRES NOIRS ÉPAIS : sur le fond gris ardoise, les encadrés
+   (avis, cartes du catalogue, blocs de contact et d'équipement)
+   ont un bord noir de 3 pixels pour bien ressortir.
+   Pour changer l'épaisseur partout : modifier --bord-cadre.
+   ============================================================ */
+:root { --bord-cadre: 3px; }
+.avis-carte, .carte { border: var(--bord-cadre) solid #000; }
+.contact, .blocs {
+  gap: var(--bord-cadre);
+  background: #000;                     /* l'espace entre les blocs forme les lignes noires */
+  border: var(--bord-cadre) solid #000;
 }
