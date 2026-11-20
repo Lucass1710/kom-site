@@ -137,3 +137,26 @@ if (document.documentElement.classList.contains('avec-intro')) {
   const intro = document.querySelector('.intro-logo');
   if (intro) intro.addEventListener('click', function () { clearTimeout(minuteurIntro); finirIntro(); });
 }
+
+// ============================================================
+// Avis clients : sur téléphone (quand ils forment une ligne à glisser),
+// ils défilent tout seuls, un par un, toutes les 5 secondes.
+// Dès que le visiteur touche la ligne, le défilement automatique fait une pause.
+// ============================================================
+const listeAvis = document.querySelector('.avis-liste');
+if (listeAvis && !animationsReduites) {
+  let pauseJusqua = 0;
+  const pause = function () { pauseJusqua = Date.now() + 8000; };   // 8 s de pause après un toucher
+  listeAvis.addEventListener('touchstart', pause, { passive: true });
+  listeAvis.addEventListener('mousedown', pause);
+
+  setInterval(function () {
+    // Rien à faire si tous les avis sont déjà visibles (ordinateur) ou si on est en pause
+    if (listeAvis.scrollWidth <= listeAvis.clientWidth + 5 || Date.now() < pauseJusqua) return;
+    const cartes = [...listeAvis.querySelectorAll('.avis-carte')];
+    const largeur = cartes[0].offsetWidth + 16;                          // une carte + l'espace
+    const actuel = Math.round(listeAvis.scrollLeft / largeur);
+    const suivant = (actuel + 1) % cartes.length;                         // après le dernier, retour au premier
+    listeAvis.scrollTo({ left: suivant * largeur, behavior: 'smooth' });
+  }, 5000);
+}
