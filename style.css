@@ -1325,10 +1325,8 @@ h1, h2, h3,
 }
 
 /* ============================================================
-   C. FOND DE PAGE : une photo de texture sombre, fixe derrière tout le site
-   Deux essais possibles :
-     - « fumée » (par défaut)
-     - « sable noir » (ajouter ?fond=sable à l'adresse pour le voir)
+   C. FOND DE PAGE : texture de sable noir, fixe derrière tout le site
+   Un voile noir léger par-dessus la photo garde les textes bien lisibles.
    Le calque est fixe : le texte défile par-dessus, la texture ne bouge pas.
    ============================================================ */
 body { background-color: #000; }
@@ -1338,9 +1336,10 @@ body::before {
   inset: 0;
   z-index: -10;                       /* tout au fond, derrière le contenu */
   pointer-events: none;
-  background: #000 url(images/fonds/fond-fumee.jpg) center / cover no-repeat;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),   /* voile pour la lisibilité */
+    #000 url(images/fonds/fond-sable.jpg) center / cover no-repeat;
 }
-html.fond-sable body::before { background-image: url(images/fonds/fond-sable.jpg); }
 /* Les grandes zones pleine largeur laissent voir le fond (au lieu d'un noir plat) */
 .contact-bloc, .bloc { background: rgba(0, 0, 0, 0.55); }
 

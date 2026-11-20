@@ -161,12 +161,3 @@ if (listeAvis && !animationsReduites) {
   }, 5000);
 }
 
-// ============================================================
-// Essai des fonds : ajouter ?fond=sable (ou ?fond=fumee) à l'adresse.
-// Le choix est retenu pendant la visite, sur toutes les pages.
-// ============================================================
-try {
-  const choixFond = new URLSearchParams(location.search).get('fond');
-  if (choixFond) sessionStorage.setItem('fond', choixFond);
-  if (sessionStorage.getItem('fond') === 'sable') document.documentElement.classList.add('fond-sable');
-} catch (e) {}
