@@ -1647,3 +1647,28 @@ html.avec-intro .intro-logo { animation: fin-intro-securite 0.6s ease 4s forward
   background: #000;                     /* l'espace entre les blocs forme les lignes noires */
   border: var(--bord-cadre) solid #000;
 }
+
+/* ============================================================
+   E. POLICE PLUS ÉPAISSE pour la lisibilité (surtout sur téléphone
+   et sur le fond gris) : chaque texte passe d'un cran au-dessus.
+   Échelle : 400 = normal, 500 = moyen, 600 = demi-gras.
+   ============================================================ */
+body { font-weight: 400; }                       /* textes : normal (au lieu de fin) */
+h1, h2, h3,
+.slogan, .titre-section, .bandeau h1, .fiche h1,
+.fiche-prix, .carte-texte h3, .bloc h3 { font-weight: 600; }   /* titres : demi-gras */
+.citation, .etape-numero, .chiffre strong,
+.caracteristiques dd { font-weight: 500; }
+.etape h3, .bloc h3 { font-weight: 600; }
+
+/* ============================================================
+   F. BOUTONS : un vrai rectangle, même quand le texte passe sur deux lignes
+   (sinon le cadre doré se coupe en morceaux).
+   ============================================================ */
+.bouton {
+  display: inline-block;
+  box-sizing: border-box;
+  max-width: 100%;
+  text-align: center;
+  line-height: 1.6;
+}
