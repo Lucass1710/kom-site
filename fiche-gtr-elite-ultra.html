@@ -35,14 +35,27 @@
     </nav>
   </header>
 
-  <!-- Photos qui défilent (sites officiels, provisoires : à remplacer par le kit média).
-       Pour ajouter une photo : ajouter une ligne <img src="..." alt="..."> ci-dessous. -->
+  <!-- Photos qui défilent, rangées par coloris (sites Gusto et KOM, provisoires : à remplacer par le kit média).
+       Chaque photo porte data-coloris : seules celles du coloris choisi s'affichent.
+       Pour ajouter une photo : ajouter une ligne <img src="..." alt="..." data-coloris="..."> ci-dessous. -->
   <section class="fiche-diapo">
-    <img src="images/gusto-gtr-elite-ultra.jpg" alt="Gusto GTR Elite Ultra">
-    <img src="images/gtr/gtr-2.jpg" alt="Gusto GTR Elite Ultra, photo 2">
-    <img src="images/gtr/gtr-3.jpg" alt="Gusto GTR Elite Ultra, photo 3">
-    <img src="images/gtr/gtr-4.jpg" alt="Gusto GTR Elite Ultra, photo 4">
-    <img src="images/gtr/gtr-5.jpg" alt="Gusto GTR Elite Ultra, photo 5">
+    <!-- Pearl White (blanc) -->
+    <img src="images/gusto-gtr-elite-ultra.jpg" alt="Gusto GTR Elite Ultra Pearl White" data-coloris="pearl-white">
+    <img src="images/gtr/pearl-white-2.jpg" alt="GTR Elite Ultra Pearl White, vue de profil" data-coloris="pearl-white">
+    <img src="images/gtr/pearl-white-3.jpg" alt="GTR Elite Ultra Pearl White, vue de trois quarts" data-coloris="pearl-white">
+    <img src="images/gtr/pearl-white-4.jpg" alt="GTR Elite Ultra Pearl White, détail du cadre" data-coloris="pearl-white">
+    <img src="images/gtr/pearl-white-5.jpg" alt="GTR Elite Ultra Pearl White, potence" data-coloris="pearl-white">
+    <img src="images/gtr/pearl-white-6.jpg" alt="GTR Elite Ultra Pearl White, fourche" data-coloris="pearl-white">
+    <img src="images/gtr/pearl-white-7.jpg" alt="GTR Elite Ultra Pearl White, détail" data-coloris="pearl-white">
+    <img src="images/gtr/pearl-white-8.jpg" alt="GTR Elite Ultra Pearl White, vue de face" data-coloris="pearl-white">
+    <!-- Flux Orange -->
+    <img src="images/gtr/flux-orange-1.jpg" alt="GTR Elite Ultra Flux Orange" data-coloris="flux-orange">
+    <img src="images/gtr/flux-orange-2.jpg" alt="GTR Elite Ultra Flux Orange, détail du cadre" data-coloris="flux-orange">
+    <!-- Team Gold -->
+    <img src="images/gtr/team-gold-1.jpg" alt="GTR Elite Ultra Team Gold" data-coloris="team-gold">
+    <!-- Jet Black -->
+    <img src="images/gtr/jet-black-1.jpg" alt="GTR Elite Ultra Jet Black" data-coloris="jet-black">
+    <img src="images/gtr/jet-black-2.jpg" alt="GTR Elite Ultra Jet Black, détail de la tige de selle" data-coloris="jet-black">
 
     <button class="fleche fleche-gauche" aria-label="Photo précédente">‹</button>
     <button class="fleche fleche-droite" aria-label="Photo suivante">›</button>
@@ -74,11 +87,13 @@
         <div><dt>Roues</dt><dd>Carbone 50</dd></div>
         <div><dt>Coloris</dt><dd>4 coloris disponibles</dd></div>
       </dl>
+      <!-- Coloris cliquables : choisir une couleur change les photos en haut de la fiche -->
+      <p class="consigne-coloris">Choisissez un coloris</p>
       <div class="coloris">
-        <span>Flux Orange</span>
-        <span>Team Gold</span>
-        <span>Pearl White</span>
-        <span>Jet Black</span>
+        <button type="button" data-coloris="flux-orange">Flux Orange</button>
+        <button type="button" data-coloris="team-gold">Team Gold</button>
+        <button type="button" data-coloris="pearl-white" class="actif">Pearl White</button>
+        <button type="button" data-coloris="jet-black">Jet Black</button>
       </div>
     </div>
 

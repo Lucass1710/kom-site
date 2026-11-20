@@ -1207,3 +1207,33 @@ img.carte-photo.fond-blanc { background: #fff; }   /* dans les cartes : panneau 
   .logos img.haut { height: 26px; }
   .logo-texte { font-size: 0.75rem; letter-spacing: 0.12em; white-space: normal; }   /* 12 px minimum */
 }
+
+/* ============================================================
+   COLORIS CLIQUABLES (fiches) : choisir une couleur change les photos
+   ============================================================ */
+.fiche-diapo img.hors-coloris { display: none; }                  /* photos des autres coloris */
+.fiche-diapo.une-seule-photo .fleche,
+.fiche-diapo.une-seule-photo .points { display: none; }           /* rien à faire défiler */
+.coloris button {
+  background: transparent;
+  border: 1px solid #333;
+  color: #ccc;
+  padding: 0.5rem 1rem;
+  font-family: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: border-color 0.3s, color 0.3s;
+}
+.coloris button:hover { border-color: #777; color: #fff; }
+.coloris button.actif { border-color: var(--or); color: var(--or); }   /* coloris choisi */
+.consigne-coloris {
+  color: #777;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin: 2.5rem 0 0;
+}
+.consigne-coloris + .coloris { margin-top: 0.8rem; }
+@media (max-width: 700px) {
+  .coloris button { min-height: 44px; }
+}

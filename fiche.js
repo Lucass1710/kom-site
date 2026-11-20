@@ -14,22 +14,36 @@ verifierDefilement();
 // 2) Photos qui défilent en haut de la fiche (s'il y en a plusieurs)
 const diapo = document.querySelector('.fiche-diapo');
 if (diapo) {
-  const photos = diapo.querySelectorAll('img');
+  const toutesLesPhotos = [...diapo.querySelectorAll('img')];
   const zonePoints = diapo.querySelector('.points');
+  let photos = [];     // les photos affichées en ce moment (toutes, ou celles d'un coloris)
+  let points = [];
   let numero = 0;
   let minuteur;
 
-  // Crée automatiquement un petit trait par photo
-  photos.forEach(function (photo, i) {
-    const point = document.createElement('span');
-    point.className = 'point' + (i === 0 ? ' actif' : '');
-    zonePoints.appendChild(point);
-  });
-  const points = zonePoints.querySelectorAll('.point');
-  photos[0].classList.add('visible');
+  // Prépare le diaporama avec une liste de photos : un petit trait par photo, la 1re visible
+  function preparer(liste) {
+    toutesLesPhotos.forEach(function (p) {
+      p.classList.remove('visible');
+      p.classList.toggle('hors-coloris', !liste.includes(p));   // cache les photos des autres coloris
+    });
+    photos = liste;
+    zonePoints.innerHTML = '';
+    photos.forEach(function (photo, i) {
+      const point = document.createElement('span');
+      point.className = 'point' + (i === 0 ? ' actif' : '');
+      zonePoints.appendChild(point);
+    });
+    points = [...zonePoints.querySelectorAll('.point')];
+    numero = 0;
+    photos[0].classList.add('visible');
+    // Une seule photo ? On cache les flèches et les traits
+    diapo.classList.toggle('une-seule-photo', photos.length < 2);
+  }
 
   // Affiche la photo demandée (boucle : après la dernière, retour à la première)
   function montrer(nouveau) {
+    if (photos.length < 2) return;
     photos[numero].classList.remove('visible');
     points[numero].classList.remove('actif');
     numero = (nouveau + photos.length) % photos.length;
@@ -45,5 +59,36 @@ if (diapo) {
 
   diapo.querySelector('.fleche-gauche').addEventListener('click', function () { montrer(numero - 1); relancer(); });
   diapo.querySelector('.fleche-droite').addEventListener('click', function () { montrer(numero + 1); relancer(); });
-  relancer();
+
+  // 3) Coloris cliquables (si la fiche en a) : chaque photo porte data-coloris="...",
+  //    chaque bouton aussi. Choisir un coloris n'affiche que ses photos.
+  const boutonsColoris = [...document.querySelectorAll('.coloris button[data-coloris]')];
+  function choisirColoris(nom) {
+    boutonsColoris.forEach(function (b) {
+      const choisi = b.dataset.coloris === nom;
+      b.classList.toggle('actif', choisi);
+      b.setAttribute('aria-pressed', choisi);
+    });
+    const liste = toutesLesPhotos.filter(function (p) { return p.dataset.coloris === nom; });
+    preparer(liste.length ? liste : toutesLesPhotos);
+    relancer();
+  }
+  boutonsColoris.forEach(function (b) {
+    b.addEventListener('click', function () {
+      choisirColoris(b.dataset.coloris);
+      // Sur téléphone, on remonte doucement vers les photos pour voir le changement
+      if (window.innerWidth <= 700) {
+        diapo.scrollIntoView({ behavior: 'smooth' });
+        // Si le défilement en douceur n'est pas pris en charge, on saute directement aux photos
+        setTimeout(function () {
+          if (diapo.getBoundingClientRect().top < -50) diapo.scrollIntoView();
+        }, 700);
+      }
+    });
+  });
+
+  // Au chargement : le coloris marqué « actif » dans la page, sinon toutes les photos
+  const depart = boutonsColoris.find(function (b) { return b.classList.contains('actif'); });
+  if (depart) choisirColoris(depart.dataset.coloris);
+  else { preparer(toutesLesPhotos); relancer(); }
 }
