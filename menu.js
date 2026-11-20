@@ -123,7 +123,7 @@ if (!animationsReduites && 'IntersectionObserver' in window) {
 
 // ============================================================
 // H. Intro du logo (page d'accueil, 1re visite de la session) :
-// au bout de 2,6 s (ou au premier appui), l'intro s'efface en fondu.
+// au bout de 4,8 s (ou au premier appui), l'intro s'efface en fondu.
 // ============================================================
 if (document.documentElement.classList.contains('avec-intro')) {
   const finirIntro = function () {
@@ -131,9 +131,9 @@ if (document.documentElement.classList.contains('avec-intro')) {
     try { sessionStorage.setItem('intro-vue', 'oui'); } catch (e) {}
     setTimeout(function () {
       document.documentElement.classList.remove('avec-intro', 'intro-finie');
-    }, 900);
+    }, 1400);
   };
-  const minuteurIntro = setTimeout(finirIntro, 2600);
+  const minuteurIntro = setTimeout(finirIntro, 4800);
   const intro = document.querySelector('.intro-logo');
   if (intro) intro.addEventListener('click', function () { clearTimeout(minuteurIntro); finirIntro(); });
 }
@@ -161,3 +161,11 @@ if (listeAvis && !animationsReduites) {
   }, 5000);
 }
 
+
+// Un appui sur le logo KOM (en haut ou en bas de page) ramène à l'accueil
+// ET demande de rejouer l'intro du logo à l'arrivée.
+document.querySelectorAll('.logo, .pied-logo').forEach(function (logo) {
+  logo.addEventListener('click', function () {
+    try { sessionStorage.setItem('rejouer-intro', 'oui'); } catch (e) {}
+  });
+});

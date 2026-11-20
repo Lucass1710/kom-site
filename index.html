@@ -15,11 +15,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Montserrat:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="style.css">
-  <!-- H. Intro : à la 1re visite (par session), le « K » du logo se dessine. Ce petit script
-       décide tout de suite s'il faut l'afficher, avant même que la page apparaisse. -->
+  <!-- H. Intro : le « K » du logo se dessine à la 1re visite, puis à chaque retour
+       à l'accueil par un appui sur le logo KOM. Ce petit script décide tout de suite
+       s'il faut l'afficher, avant même que la page apparaisse. -->
   <script>
     try {
-      if (!sessionStorage.getItem('intro-vue') &&
+      const rejouer = sessionStorage.getItem('rejouer-intro');
+      sessionStorage.removeItem('rejouer-intro');
+      if ((rejouer || !sessionStorage.getItem('intro-vue')) &&
           !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         document.documentElement.classList.add('avec-intro');
       }
