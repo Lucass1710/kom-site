@@ -1139,3 +1139,63 @@ img.carte-photo.fond-blanc { background: #fff; }   /* dans les cartes : panneau 
 @media (max-width: 1000px) {
   .deux-colonnes.inverse img { order: 0; }   /* sur petit écran : la photo toujours au-dessus */
 }
+
+/* ============================================================
+   BANDEAU DES MARQUES (accueil)
+   Tous les logos sont rendus en blanc (quelle que soit leur couleur d'origine)
+   puis atténués en gris clair : un rendu propre, sans couleurs parasites.
+   ============================================================ */
+.marques {
+  padding: 4.5rem 2rem;
+  text-align: center;
+  border-top: 1px solid #1a1a1a;
+}
+.marques .sur-titre { margin-bottom: 2.5rem; }
+.logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem 2.5rem;            /* espace vertical / horizontal entre les logos */
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.logos a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  opacity: 0.55;                 /* gris clair au repos */
+  transition: opacity 0.4s;
+}
+.logos a:hover { opacity: 1; }   /* blanc pur au survol */
+.logos img {
+  height: 22px;
+  width: auto;
+  max-width: 130px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);   /* transforme n'importe quel logo en blanc */
+}
+.logos img.haut { height: 29px; }    /* logos fins : un peu plus grands pour le même poids visuel */
+/* Marques dont on n'a pas encore le logo : nom écrit sobrement, à remplacer */
+.logo-texte {
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+  .marques { padding: 3.5rem 1rem; }
+  .logos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);   /* 3 x 3 : une grille bien rangée */
+    gap: 1.8rem 1rem;
+  }
+  .logos img { height: 20px; max-width: 100%; }
+  .logos img.haut { height: 26px; }
+  .logo-texte { font-size: 0.75rem; letter-spacing: 0.12em; white-space: normal; }   /* 12 px minimum */
+}
