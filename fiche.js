@@ -74,17 +74,7 @@ if (diapo) {
     relancer();
   }
   boutonsColoris.forEach(function (b) {
-    b.addEventListener('click', function () {
-      choisirColoris(b.dataset.coloris);
-      // Sur téléphone, on remonte doucement vers les photos pour voir le changement
-      if (window.innerWidth <= 700) {
-        diapo.scrollIntoView({ behavior: 'smooth' });
-        // Si le défilement en douceur n'est pas pris en charge, on saute directement aux photos
-        setTimeout(function () {
-          if (diapo.getBoundingClientRect().top < -50) diapo.scrollIntoView();
-        }, 700);
-      }
-    });
+    b.addEventListener('click', function () { choisirColoris(b.dataset.coloris); });
   });
 
   // Au chargement : le coloris marqué « actif » dans la page, sinon toutes les photos

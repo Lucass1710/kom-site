@@ -1237,3 +1237,15 @@ img.carte-photo.fond-blanc { background: #fff; }   /* dans les cartes : panneau 
 @media (max-width: 700px) {
   .coloris button { min-height: 44px; }
 }
+
+/* Bandeau du choix des coloris, collé sous les photos de la fiche */
+.choix-coloris {
+  text-align: center;
+  padding: 1.5rem 1rem 0.5rem;
+  border-bottom: 1px solid #1a1a1a;
+}
+.choix-coloris .consigne-coloris { margin: 0; }
+.choix-coloris .coloris {
+  justify-content: center;
+  margin: 0.8rem 0 1rem;
+}
