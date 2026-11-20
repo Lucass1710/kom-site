@@ -1471,3 +1471,92 @@ html.avec-intro .intro-logo { animation: fin-intro-securite 0.6s ease 4s forward
    peuvent être touchées (sinon « Découvrir » ouvrait parfois la fiche d'un autre vélo) */
 .diapo { pointer-events: none; }
 .diapo.visible { pointer-events: auto; }
+
+/* ============================================================
+   AVIS CLIENTS (accueil)
+   ============================================================ */
+.avis {
+  padding: 6rem 2rem;
+  text-align: center;
+  border-top: 1px solid #1a1a1a;
+}
+.avis-note {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 1.5rem 0 3.5rem;
+}
+.avis-chiffre {
+  font-family: var(--police-titre);
+  font-size: 4.5rem;
+  line-height: 1;
+  color: #fff;
+}
+.avis-etoiles { color: var(--or); font-size: 1.2rem; letter-spacing: 0.35em; margin-left: 0.35em; }
+.avis-nombre { color: #999; font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; }
+.avis-liste {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto 3rem;
+}
+.avis-carte {
+  margin: 0;
+  padding: 2.2rem 2rem;
+  border: 1px solid #222;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.avis-carte p {
+  font-family: var(--police-titre);
+  font-style: italic;
+  font-size: 1.35rem;
+  line-height: 1.5;
+  color: #e6e6e6;
+  margin: 0 0 1.5rem;
+}
+.avis-carte footer {
+  color: var(--or);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.lien-avis { text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; }
+
+@media (max-width: 800px) {
+  .avis { padding: 4.5rem 0; }
+  /* Sur téléphone : les avis forment une ligne qu'on fait glisser au doigt */
+  .avis-liste {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding: 0 1.5rem;
+    scrollbar-width: none;
+  }
+  .avis-liste::-webkit-scrollbar { display: none; }
+  .avis-carte { flex: 0 0 82%; scroll-snap-align: center; padding: 1.8rem 1.5rem; }
+  .avis-carte p { font-size: 1.25rem; }
+  .avis-chiffre { font-size: 3.6rem; }
+}
+
+/* Rappel discret de la note Google (page Rendez-vous) */
+.note-google {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 44px;
+  margin-top: 1rem;
+  color: #aaa;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.note-google:hover { color: #fff; }
+.note-google .avis-etoiles { font-size: 0.9rem; letter-spacing: 0.15em; margin: 0; }

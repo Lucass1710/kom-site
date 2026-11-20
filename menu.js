@@ -92,7 +92,7 @@ diaporamas.forEach(function (d) {
 const animationsReduites = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if (!animationsReduites && 'IntersectionObserver' in window) {
   const aAnimer = document.querySelectorAll([
-    '.section-studio > *', '.deux-colonnes > *', '.rdv > *', '.marques > *',
+    '.section-studio > *', '.deux-colonnes > *', '.rdv > *', '.marques > *', '.avis > *',
     '.entete-page > *', '.fiche > div', '.carte', '.bloc', '.etape',
     '.contact-bloc', '.contact-action > *', '.pied-haut', '.pied-colonnes .colonne'
   ].join(','));
