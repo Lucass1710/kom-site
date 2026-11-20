@@ -12,13 +12,19 @@
 :root {
   --or: #a88b5e;                         /* doré sobre, proche du bronze du logo */
   --or-leger: rgba(168, 139, 94, 0.25);  /* le même doré, très transparent (fines lignes) */
+
+  /* Les deux polices du site (chargées depuis Google Fonts dans chaque page) */
+  --police-titre: "Cormorant Garamond", Georgia, serif;          /* titres : élégante, très fine */
+  --police-texte: "Montserrat", "Helvetica Neue", Arial, sans-serif;   /* textes et petites capitales : moderne, lisible */
 }
 
 body {
   margin: 0;
   background: #000;          /* fond noir */
   color: #fff;               /* texte blanc */
-  font-family: Georgia, serif;
+  font-family: var(--police-texte);
+  font-weight: 300;            /* texte fin et léger */
+  -webkit-font-smoothing: antialiased;
 }
 
 /* ===== BARRE DE MENU ===== */
@@ -1268,3 +1274,52 @@ img.carte-photo.fond-blanc { background: #fff; }   /* dans les cartes : panneau 
 
 /* Photos catalogue sur fond blanc : on montre le vélo en entier (sans le recadrer) */
 .fiche-diapo img[data-fond="blanc"] { object-fit: contain; background: #fff; }
+
+
+/* ============================================================
+   TYPOGRAPHIE : titres en Cormorant Garamond, le reste en Montserrat
+   ============================================================ */
+h1, h2, h3,
+.slogan, .titre-section, .citation, .bandeau h1, .fiche h1,
+.etape-numero, .chiffre strong, .fiche-prix, .carte-texte h3, .bloc h3 {
+  font-family: var(--police-titre);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+/* Cormorant est plus petite que Georgia à taille égale : on agrandit un peu les titres */
+.slogan { font-size: 3.6rem; line-height: 1.1; }
+.titre-section { font-size: 3rem; line-height: 1.15; }
+.bandeau h1 { font-size: 4.2rem; line-height: 1.05; }
+.fiche h1 { font-size: 4.2rem; line-height: 1; }
+.carte-texte h3 { font-size: 1.8rem; }
+.bloc h3 { font-size: 2rem; }
+.etape h3 { font-size: 1.6rem; }
+.citation { font-size: 1.8rem; font-style: italic; font-weight: 400; }
+.fiche-prix { font-size: 1.8rem; }
+.etape-numero { font-size: 4rem; font-weight: 400; }
+.chiffre strong { font-size: 3.2rem; font-weight: 400; }
+
+/* Petites capitales (menu, boutons, sur-titres…) : Montserrat, un peu plus appuyée */
+.liens a, .bouton, .sur-titre, .marque, .lien-dore, .filtre, .type-velo,
+.petit-titre, .consigne-coloris, .caracteristiques dt, .retour, .rdv-infos,
+.lien-externe, .barre-contact a, .coloris button, .coloris span {
+  font-family: var(--police-texte);
+  font-weight: 500;
+}
+.liens a { font-size: 0.78rem; }
+.bouton { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.18em; }
+.caracteristiques dd { font-weight: 400; }
+
+@media (max-width: 1000px) {
+  .liens a { font-size: 0.66rem; }
+}
+@media (max-width: 700px) {
+  .slogan { font-size: 2.5rem; }
+  .titre-section { font-size: 2.2rem; }
+  .bandeau h1 { font-size: 2.8rem; }
+  .fiche h1 { font-size: 3rem; }
+  .citation { font-size: 1.45rem; }
+  .bloc h3 { font-size: 1.7rem; }
+  .liens a, .liens .sous-menu-boite a { font-size: 1.05rem; }   /* menu ☰ plein écran */
+  .liens .sous-menu-boite a { font-size: 0.9rem; }
+}
