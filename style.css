@@ -1398,8 +1398,8 @@ body {
    ============================================================ */
 .apparition {
   opacity: 0;
-  transform: translateY(26px);
-  transition: opacity 1s ease, transform 1.1s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transform: translateY(14px);
+  transition: opacity 0.45s ease, transform 0.55s cubic-bezier(0.2, 0.7, 0.2, 1);   /* rapide et discret */
 }
 .apparition.apparu { opacity: 1; transform: none; }
 

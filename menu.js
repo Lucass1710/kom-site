@@ -107,15 +107,15 @@ if (!animationsReduites && 'IntersectionObserver' in window) {
         setTimeout(function () {
           el.classList.remove('apparition', 'apparu');
           el.style.transitionDelay = '';
-        }, 1700);
+        }, 900);
       }
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.05, rootMargin: '0px 0px 60px 0px' });   // démarre juste avant que l'élément arrive à l'écran
 
   aAnimer.forEach(function (el) {
-    // petit décalage entre les éléments voisins (effet « en cascade »), 0,4 s au maximum
+    // petit décalage entre les éléments voisins (effet « en cascade »), 0,15 s au maximum
     const rang = [...el.parentElement.children].indexOf(el);
-    el.style.transitionDelay = Math.min(rang, 4) * 0.1 + 's';
+    el.style.transitionDelay = Math.min(rang, 3) * 0.05 + 's';
     el.classList.add('apparition');
     observateur.observe(el);
   });
