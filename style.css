@@ -1560,3 +1560,68 @@ html.avec-intro .intro-logo { animation: fin-intro-securite 0.6s ease 4s forward
 }
 .note-google:hover { color: #fff; }
 .note-google .avis-etoiles { font-size: 0.9rem; letter-spacing: 0.15em; margin: 0; }
+
+/* ============================================================
+   PRODUITS NUTRITION (nutrition.html) : photo à gauche, texte et goûts à droite
+   ============================================================ */
+.produit {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  align-items: center;
+  gap: 4rem;
+  max-width: 1100px;
+  margin: 0 auto 6rem;
+  text-align: left;
+}
+.produit.inverse .produit-visuel { order: 2; }
+.produit-visuel {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  background: #fff;                        /* les sachets sont photographiés sur fond blanc */
+  overflow: hidden;
+}
+.produit-visuel img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.produit-visuel img.ambiance { object-fit: cover; }   /* photo d'ambiance : remplit le carré */
+.produit-visuel img.visible { opacity: 1; }
+.produit-texte h3 { font-size: 2.4rem; margin: 0.3rem 0 1rem; }
+.produit-texte .texte { color: #aaa; line-height: 1.8; margin: 0 0 1.5rem; }
+.produit-infos {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.8rem;
+  color: #999;
+  font-size: 0.85rem;
+}
+.produit-infos strong { color: var(--or); font-weight: 500; }
+.produit-texte .consigne-coloris { margin: 0 0 0.8rem; }
+.gouts { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.gouts button {
+  background: transparent;
+  border: 1px solid #333;
+  color: #ccc;
+  padding: 0.5rem 0.9rem;
+  font-family: var(--police-texte);
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: border-color 0.3s, color 0.3s;
+}
+.gouts button:hover { border-color: #777; color: #fff; }
+.gouts button.actif { border-color: var(--or); color: var(--or); }
+
+@media (max-width: 800px) {
+  .produit { grid-template-columns: 1fr; gap: 1.8rem; margin-bottom: 4.5rem; }
+  .produit.inverse .produit-visuel { order: 0; }   /* sur téléphone : la photo toujours au-dessus */
+  .produit-texte h3 { font-size: 2rem; }
+  .gouts button { min-height: 44px; }
+}
