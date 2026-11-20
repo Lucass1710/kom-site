@@ -876,7 +876,11 @@ img.carte-photo.fond-blanc { background: #fff; }   /* dans les cartes : panneau 
   padding: 0.75rem 1.5rem;
   transition: color 0.3s, letter-spacing 0.4s;
 }
-.liens .sous-menu-boite a:hover { letter-spacing: 0.22em; }   /* léger écartement des lettres au survol */
+/* Léger écartement des lettres au survol : seulement avec une vraie souris
+   (sur téléphone, un appui déclenchait cette animation et la rendait bizarre) */
+@media (hover: hover) and (min-width: 701px) {
+  .liens .sous-menu-boite a:hover { letter-spacing: 0.22em; }
+}
 
 /* Tablette : liens un peu plus serrés pour que tout tienne sur une ligne */
 @media (max-width: 1000px) {
@@ -989,6 +993,10 @@ img.carte-photo.fond-blanc { background: #fff; }   /* dans les cartes : panneau 
     margin-bottom: 0.2rem;
   }
   .sous-menu, .sous-menu-boite { display: block; }
+  /* Sur téléphone, un appui ne doit déclencher aucune animation du menu déroulant */
+  .menu-deroulant:hover .sous-menu,
+  .menu-deroulant:focus-within .sous-menu { transform: none; }
+  .sous-menu, .liens .sous-menu-boite a { transition: opacity 0.5s ease, transform 0.5s ease; }
   .liens .sous-menu-boite a { font-size: 0.9rem; padding: 0.6rem 1rem; color: #ccc; }
 
   /* Quand le menu est ouvert, la page derrière ne défile plus */
