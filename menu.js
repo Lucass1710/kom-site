@@ -82,3 +82,58 @@ diaporamas.forEach(function (d) {
     }, { passive: true });
   });
 });
+
+// ============================================================
+// E. Apparition en douceur au défilement :
+// les blocs de texte, cartes et photos apparaissent (fondu + léger glissement)
+// au moment où ils entrent dans l'écran. Désactivé si le visiteur a demandé
+// à son appareil de « réduire les animations » (réglage d'accessibilité).
+// ============================================================
+const animationsReduites = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (!animationsReduites && 'IntersectionObserver' in window) {
+  const aAnimer = document.querySelectorAll([
+    '.section-studio > *', '.deux-colonnes > *', '.rdv > *', '.marques > *',
+    '.entete-page > *', '.fiche > div', '.carte', '.bloc', '.etape',
+    '.contact-bloc', '.contact-action > *', '.pied-haut', '.pied-colonnes .colonne'
+  ].join(','));
+
+  const observateur = new IntersectionObserver(function (entrees) {
+    entrees.forEach(function (entree) {
+      if (entree.isIntersecting) {
+        const el = entree.target;
+        el.classList.add('apparu');
+        observateur.unobserve(el);   // une seule fois
+        // Une fois apparu, on retire l'animation pour retrouver les effets normaux (survol…)
+        setTimeout(function () {
+          el.classList.remove('apparition', 'apparu');
+          el.style.transitionDelay = '';
+        }, 1700);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  aAnimer.forEach(function (el) {
+    // petit décalage entre les éléments voisins (effet « en cascade »), 0,4 s au maximum
+    const rang = [...el.parentElement.children].indexOf(el);
+    el.style.transitionDelay = Math.min(rang, 4) * 0.1 + 's';
+    el.classList.add('apparition');
+    observateur.observe(el);
+  });
+}
+
+// ============================================================
+// H. Intro du logo (page d'accueil, 1re visite de la session) :
+// au bout de 2,6 s (ou au premier appui), l'intro s'efface en fondu.
+// ============================================================
+if (document.documentElement.classList.contains('avec-intro')) {
+  const finirIntro = function () {
+    document.documentElement.classList.add('intro-finie');
+    try { sessionStorage.setItem('intro-vue', 'oui'); } catch (e) {}
+    setTimeout(function () {
+      document.documentElement.classList.remove('avec-intro', 'intro-finie');
+    }, 900);
+  };
+  const minuteurIntro = setTimeout(finirIntro, 2600);
+  const intro = document.querySelector('.intro-logo');
+  if (intro) intro.addEventListener('click', function () { clearTimeout(minuteurIntro); finirIntro(); });
+}

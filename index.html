@@ -15,10 +15,34 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap">
   <link rel="stylesheet" href="style.css">
+  <!-- H. Intro : à la 1re visite (par session), le « K » du logo se dessine. Ce petit script
+       décide tout de suite s'il faut l'afficher, avant même que la page apparaisse. -->
+  <script>
+    try {
+      if (!sessionStorage.getItem('intro-vue') &&
+          !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('avec-intro');
+      }
+    } catch (e) {}
+  </script>
 </head>
 
 <!-- La partie "body" contient ce que le visiteur voit -->
 <body>
+
+  <!-- H. Intro : le « K » du logo se dessine trait par trait (un appui la passe) -->
+  <div class="intro-logo" aria-hidden="true">
+    <svg viewBox="0 0 820 780" class="intro-k">
+      <line x1="100" y1="12" x2="100" y2="760"/>
+      <line x1="213" y1="12" x2="213" y2="760"/>
+      <line x1="100" y1="540" x2="640" y2="0"/>
+      <line x1="213" y1="577" x2="790" y2="0"/>
+      <line x1="296" y1="494" x2="562" y2="760"/>
+      <line x1="398" y1="392" x2="766" y2="760"/>
+    </svg>
+    <p class="intro-nom">KOM</p>
+    <p class="intro-sous-titre">Cycling Studio</p>
+  </div>
 
   <!-- Barre de menu : logo à gauche, liens à droite -->
   <header class="menu">
@@ -120,6 +144,40 @@
     <a class="bouton" href="rendez-vous.html">Prendre rendez-vous</a>
     <p class="rdv-infos">Draguignan · 06 38 82 22 19</p>
   </section>
+
+  <!-- ===== PIED DE PAGE (identique sur toutes les pages) ===== -->
+  <footer class="pied-de-page">
+    <div class="pied-haut">
+      <a class="pied-logo" href="index.html" aria-label="KOM Cycling Studio – accueil"><span class="logo-img"></span></a>
+      <p class="pied-slogan">Le vélo de vos rêves, de la première à la dernière seconde.</p>
+    </div>
+    <div class="pied-colonnes">
+      <div class="colonne">
+        <p class="sur-titre">Le studio</p>
+        <p>400 Rac du Col de l'Ange<br>83300 Draguignan</p>
+        <p class="pied-note">Uniquement sur rendez-vous</p>
+      </div>
+      <div class="colonne">
+        <p class="sur-titre">Contact</p>
+        <p><a href="tel:+33638822219">06 38 82 22 19</a></p>
+        <p><a href="mailto:komcyclingstudio@gmail.com">komcyclingstudio@gmail.com</a></p>
+        <p><a href="https://www.instagram.com/kom_cycling_studio/" target="_blank" rel="noopener">Instagram · @kom_cycling_studio</a></p>
+      </div>
+      <div class="colonne">
+        <p class="sur-titre">Le site</p>
+        <p><a href="velos.html">Les vélos</a></p>
+        <p><a href="studio.html">Le studio</a></p>
+        <p><a href="nutrition.html">Nutrition</a> · <a href="textile.html">Textile</a></p>
+        <p><a href="rendez-vous.html">Rendez-vous</a></p>
+      </div>
+      <div class="colonne">
+        <p class="sur-titre">Nos marques</p>
+        <p>Drali Milano · Regola · Gusto · Officine Mattio</p>
+        <p class="pied-note">Nutrition et textile : 226ERS · GripGrab · OUTWET</p>
+      </div>
+    </div>
+    <p class="pied-bas">© 2026 KOM Cycling Studio · Vélos de route italiens d'exception</p>
+  </footer>
 
   <!-- Le "script" est un petit programme : il change de photo toutes les 8 secondes -->
   <script>
