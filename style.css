@@ -1325,15 +1325,24 @@ h1, h2, h3,
 }
 
 /* ============================================================
-   C. TEXTURE : léger grain (comme une photo argentique) sur le fond noir
-   Une petite image de « bruit » répétée en fond de page : elle donne de la
-   matière au noir sans rien poser par-dessus les photos.
+   C. FOND DE PAGE : une photo de texture sombre, fixe derrière tout le site
+   Deux essais possibles :
+     - « fumée » (par défaut)
+     - « sable noir » (ajouter ?fond=sable à l'adresse pour le voir)
+   Le calque est fixe : le texte défile par-dessus, la texture ne bouge pas.
    ============================================================ */
-body {
-  background-color: #000;
-  background-image: url(images/grain.png);
+body { background-color: #000; }
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -10;                       /* tout au fond, derrière le contenu */
+  pointer-events: none;
+  background: #000 url(images/fonds/fond-fumee.jpg) center / cover no-repeat;
 }
-/* Les grandes sections pleine largeur gardent le grain visible (fond transparent) */
+html.fond-sable body::before { background-image: url(images/fonds/fond-sable.jpg); }
+/* Les grandes zones pleine largeur laissent voir le fond (au lieu d'un noir plat) */
+.contact-bloc, .bloc { background: rgba(0, 0, 0, 0.55); }
 
 /* ============================================================
    D. PIED DE PAGE
