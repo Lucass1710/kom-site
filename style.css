@@ -1679,3 +1679,41 @@ h1, h2, h3,
    Plus le dernier chiffre est grand, plus le voile est blanc (0 à 1).
    ============================================================ */
 .carte { background: rgba(255, 255, 255, 0.1); }
+
+/* ============================================================
+   H. MENU LISIBLE SUR PHOTO CLAIRE : en haut de page (avant de défiler),
+   un dégradé sombre plus marqué derrière le menu et une légère ombre
+   sous les lettres, pour que les liens (surtout le doré) restent lisibles.
+   ============================================================ */
+.menu:not(.fond-noir) {
+  background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.55) 65%, transparent);
+}
+.menu:not(.fond-noir) .liens > a,
+.menu:not(.fond-noir) .declencheur {
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.9);
+}
+
+/* ============================================================
+   I. LES 4 ÉTAPES (page Le studio) : chaque étape dans son propre cadre,
+   comme les cartes vélo (bord noir épais + voile blanc léger),
+   avec un bord doré au survol de la souris.
+   ============================================================ */
+.etapes { gap: 1.5rem; }
+.etape {
+  border: var(--bord-cadre) solid #000;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2.2rem 2rem;
+  transition: border-color 0.4s;
+}
+.etape:hover { border-color: var(--or); }
+@media (max-width: 700px) {
+  .etapes { gap: 1.25rem; }
+  .etape { padding: 1.8rem 1.5rem; }
+}
+
+/* ============================================================
+   K. BLOCS (marques, équipement) : fond noir conservé,
+   cadre doré au survol, comme les cartes vélo et les étapes.
+   ============================================================ */
+.bloc { transition: box-shadow 0.4s; }
+.bloc:hover { box-shadow: inset 0 0 0 var(--bord-cadre) var(--or); }
