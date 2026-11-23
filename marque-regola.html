@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!-- Page de la marque Regola : présentation (textes repris du site actuel),
+     modèles du studio, puis les équipes professionnelles qui roulent sur ces vélos. -->
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Version de test : demande aux moteurs de recherche (Google…) de ne pas afficher ce site. À retirer à la mise en ligne finale. -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>Regola – KOM Cycling Studio</title>
+  <!-- Polices du site (Google Fonts) : Cormorant Garamond pour les titres, Montserrat pour les textes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Montserrat:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Barre de menu (identique sur toutes les pages) -->
+  <header class="menu">
+    <a class="logo" href="index.html" aria-label="KOM Cycling Studio – accueil"><span class="logo-img"></span></a>
+    <!-- Bouton ☰ (visible seulement sur téléphone) -->
+    <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="liens">
+      <a href="velos.html">Les vélos</a>
+      <!-- Menu déroulant « Les marques » : au survol, les 4 marques apparaissent -->
+      <div class="menu-deroulant" data-titre="Les marques">
+        <a href="marques.html" class="declencheur page-active">Les marques</a>
+        <div class="sous-menu"><div class="sous-menu-boite">
+          <a href="marque-drali.html">Drali Milano</a>
+          <a href="marque-regola.html" class="page-active">Regola</a>
+          <a href="marque-gusto.html">Gusto</a>
+          <a href="marque-mattio.html">Officine Mattio</a>
+        </div></div>
+      </div>
+      <a href="studio.html">Le studio</a>
+      <!-- Menu déroulant : au survol, deux choix apparaissent -->
+      <div class="menu-deroulant" data-titre="Équipement">
+        <a href="nutrition.html" class="declencheur">Équipement</a>
+        <div class="sous-menu"><div class="sous-menu-boite">
+          <a href="nutrition.html">Nutrition</a>
+          <a href="textile.html">Textile</a>
+        </div></div>
+      </div>
+      <a href="rendez-vous.html">Nous contacter</a>
+    </nav>
+  </header>
+
+  <!-- 1. Grand bandeau photo -->
+  <section class="bandeau bandeau-photo fondu-leger">
+    <img src="images/equipes/bandeau-regola-mathilde.jpg" alt="Mathilde Gautier en course à Pékin sur son Regola bleu, blanc et rouge" style="object-position: 50% 56%">
+    <p class="sur-titre">Regola</p>
+    <h1>Montage à la carte, peinture sur mesure.</h1>
+  </section>
+
+  <!-- 2. La marque : son histoire et ses modèles au studio -->
+  <section class="section-studio marque-presentation">
+    <p class="sur-titre">Piémont · depuis 2021</p>
+      <p class="texte-centre">Une marque italienne intimiste qui bouscule les codes du haut de gamme. Leur règle est simple : il n'y en a pas !</p>
+      <p class="texte-centre">Montage à la carte, peinture 100 % personnalisable et positionnement tarifaire incomparable. Chaque cadre est peint à la main dans la province de Cuneo.</p>
+    <p class="petit-titre">Les modèles au studio</p>
+    <div class="marque-modeles-boutons"><a class="bouton" href="fiche-c01.html">C01</a><a class="bouton" href="fiche-dardo.html">Dardo</a><a class="bouton" href="fiche-gieira.html">Gieira</a></div>
+    <a class="lien-dore lien-externe" href="https://www.regolabikes.com/" target="_blank" rel="noopener">Site de la marque ↗</a>
+  </section>
+
+  <!-- 3. En course : Mathilde Gautier, triathlète élite qui roule sur Regola -->
+  <section class="section-studio equipe-pro">
+    <p class="sur-titre">En course</p>
+    <h2 class="titre-section">Mathilde Gautier</h2>
+    <p class="equipe-niveau">Triathlète élite · Équipe de France · Saint-Raphaël</p>
+      <p class="texte-centre">Triathlète française de haut niveau, installée à Saint-Raphaël, Mathilde Gautier a rejoint l'équipe Regola en juin 2026. Championne d'Europe de triathlon sprint en 2023, elle est montée sur le podium de la Coupe du monde à Tongyeong (Corée) en 2026.</p>
+      <p class="texte-centre">Elle a laissé carte blanche à Regola pour peindre son vélo : un Dardo bleu, blanc et rouge, à ses couleurs, le même que vous pouvez découvrir au studio.</p>
+    <div class="equipe-photos deux">
+      <img src="images/equipes/mathilde-esterel.jpg" alt="Mathilde Gautier et son Regola Dardo dans l’Esterel" loading="lazy" style="aspect-ratio: 3 / 4">
+      <img src="images/equipes/mathilde-cadre.jpg" alt="Cadre du Regola de Mathilde Gautier, peint à son palmarès" loading="lazy" style="aspect-ratio: 3 / 4">
+    </div>
+    <p class="mention">Photos : Mathilde Gautier (Instagram @mathgautier)</p>
+    <a class="lien-dore lien-externe" href="https://www.instagram.com/mathgautier/" target="_blank" rel="noopener">Suivre Mathilde sur Instagram ↗</a>
+  </section>
+
+  <!-- Appel au rendez-vous -->
+  <section class="section-studio">
+    <h2 class="titre-section">Venez le découvrir au studio</h2>
+    <a class="bouton" href="rendez-vous.html">Prendre rendez-vous</a>
+  </section>
+
+  <!-- ===== PIED DE PAGE (identique sur toutes les pages) ===== -->
+  <footer class="pied-de-page">
+    <div class="pied-haut">
+      <a class="pied-logo" href="index.html" aria-label="KOM Cycling Studio – accueil"><span class="logo-img"></span></a>
+      <p class="pied-slogan">Le vélo de vos rêves, de la première à la dernière seconde.</p>
+    </div>
+    <div class="pied-colonnes">
+      <div class="colonne">
+        <p class="sur-titre">Le studio</p>
+        <p>400 Rac du Col de l'Ange<br>83300 Draguignan</p>
+        <p class="pied-note">Uniquement sur rendez-vous</p>
+      </div>
+      <div class="colonne">
+        <p class="sur-titre">Contact</p>
+        <p><a href="tel:+33638822219">06 38 82 22 19</a></p>
+        <p><a href="mailto:komcyclingstudio@gmail.com">komcyclingstudio@gmail.com</a></p>
+        <p><a href="https://www.instagram.com/kom_cycling_studio/" target="_blank" rel="noopener">Instagram · @kom_cycling_studio</a></p>
+        <p><a href="https://www.facebook.com/p/KOM-Cycling-Studio-61579470537852/" target="_blank" rel="noopener">Facebook · KOM Cycling Studio</a></p>
+      </div>
+      <div class="colonne">
+        <p class="sur-titre">Le site</p>
+        <p><a href="velos.html">Les vélos</a></p>
+        <p><a href="marques.html">Les marques</a></p>
+        <p><a href="studio.html">Le studio</a></p>
+        <p><a href="nutrition.html">Nutrition</a> · <a href="textile.html">Textile</a></p>
+        <p><a href="rendez-vous.html">Nous contacter</a></p>
+      </div>
+      <div class="colonne">
+        <p class="sur-titre">Nos marques</p>
+        <p>Drali Milano · Regola · Gusto · Officine Mattio</p>
+        <p class="pied-note">Nutrition et textile : 226ERS · GripGrab · OUTWET</p>
+      </div>
+    </div>
+    <p class="pied-bas">© 2026 KOM Cycling Studio · Vélos de route italiens d'exception</p>
+  </footer>
+
+  <!-- Menu transparent sur la photo, noir quand on fait défiler (programme commun) -->
+  <script src="fiche.js"></script>
+
+  <!-- Menu ☰ du téléphone (programme commun) -->
+  <script src="menu.js"></script>
+
+</body>
+</html>

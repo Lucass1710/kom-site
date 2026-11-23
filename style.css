@@ -990,7 +990,7 @@ img.carte-photo.fond-blanc { background: #fff; }   /* dans les cartes : panneau 
   .menu-deroulant { display: block; margin: 0.8rem 0; text-align: center; }
   .liens .menu-deroulant .declencheur { display: none; }
   .menu-deroulant::before {
-    content: "Équipement";
+    content: attr(data-titre);            /* « Les marques » ou « Équipement » */
     display: block;
     color: var(--or);
     font-size: 0.7rem;
@@ -1873,4 +1873,86 @@ h1, h2, h3,
 .avis-defile .avis-carte { flex: 0 0 calc((100% - 3rem) / 3); scroll-snap-align: start; }
 @media (max-width: 700px) {
   .avis-defile .avis-carte { flex-basis: 82%; scroll-snap-align: center; }
+}
+
+/* ============================================================
+   R. PAGES MARQUE (Drali, Regola, Gusto, Officine Mattio) :
+   présentation, boutons des modèles, puis l'équipe pro en photos.
+   ============================================================ */
+.marque-presentation .texte-centre { max-width: 760px; margin-left: auto; margin-right: auto; }
+.marque-modeles-boutons {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 0.8rem;
+  margin: 1.2rem 0 2.2rem;
+}
+.marque-modeles-boutons .bouton { margin: 0; }
+.equipe-niveau {
+  color: var(--or); font-size: 0.78rem; letter-spacing: 0.2em;
+  text-transform: uppercase; margin: -1rem 0 2rem;
+}
+.equipe-pro .texte-centre { max-width: 760px; margin-left: auto; margin-right: auto; }
+.equipe-photos {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+  max-width: 1200px; margin: 3rem auto 1rem;
+}
+.equipe-photos img {
+  width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block;
+  border: var(--bord-cadre) solid #000; box-sizing: border-box;
+  transition: border-color 0.4s;
+}
+.equipe-photos img:hover { border-color: var(--or); }
+@media (max-width: 700px) {
+  .equipe-photos { grid-template-columns: 1fr; gap: 0.8rem; margin-top: 2rem; }
+  .equipe-niveau { font-size: 0.7rem; letter-spacing: 0.15em; }
+}
+.equipe-photos.deux { grid-template-columns: repeat(2, 1fr); max-width: 1000px; }
+@media (max-width: 700px) { .equipe-photos.deux { grid-template-columns: 1fr; } }
+.equipe-photos.une { grid-template-columns: 1fr; max-width: 640px; }
+.equipe-photos.une img { aspect-ratio: 3 / 2; }
+
+/* ============================================================
+   S. FONDU PHOTO → FOND : le bas des grandes photos (bandeaux des pages
+   et diaporama de l'accueil) devient progressivement transparent,
+   pour se fondre dans la texture du fond, sans trait de séparation.
+   ============================================================ */
+.bandeau-photo img {
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 50%, rgba(0,0,0,0.6) 75%, transparent 100%);
+          mask-image: linear-gradient(to bottom, #000 0%, #000 50%, rgba(0,0,0,0.6) 75%, transparent 100%);
+}
+.bandeau-photo::after {                                 /* voile léger seulement, qui s'efface lui aussi */
+  background: linear-gradient(transparent 35%, rgba(0,0,0,0.45) 75%, transparent 100%);
+}
+.bandeau-photo .sur-titre { text-shadow: 0 2px 10px rgba(0,0,0,0.95); }
+
+.photo-velo {
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 70%, transparent 100%);
+          mask-image: linear-gradient(to bottom, #000 0%, #000 70%, transparent 100%);
+}
+.diapo::after {
+  background: linear-gradient(transparent 40%, rgba(0,0,0,0.6) 72%, transparent 100%);
+}
+
+/* ============================================================
+   T. CONTINUITÉ : plus aucun trait gris entre les sections,
+   les parties de chaque page s'enchaînent sur le fond texturé.
+   ============================================================ */
+.rdv, .section-studio, .deux-colonnes, .marques, .avis, .choix-coloris { border-top: 0; border-bottom: 0; }
+/* Fondu plus léger (bandeaux Regola et Gusto) : la photo reste nette plus longtemps */
+.bandeau-photo.fondu-leger img {
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 72%, rgba(0,0,0,0.75) 86%, transparent 100%);
+          mask-image: linear-gradient(to bottom, #000 0%, #000 72%, rgba(0,0,0,0.75) 86%, transparent 100%);
+}
+.bandeau-photo.fondu-leger::after {
+  background: linear-gradient(transparent 55%, rgba(0,0,0,0.3) 85%, transparent 100%);
+}
+
+/* Fiches vélo : photos verticales affichées en entier (sans zoom),
+   leurs bords gauche et droit se fondent dans le noir */
+.fiche-diapo img.photo-verticale {
+  left: 50%; right: auto;
+  width: auto; max-width: none;
+  height: 100%;
+  transform: translateX(-50%);
+  object-fit: cover;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 18%, #000 82%, transparent 100%);
+          mask-image: linear-gradient(to right, transparent 0%, #000 18%, #000 82%, transparent 100%);
 }

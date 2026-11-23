@@ -24,10 +24,19 @@
     <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav class="liens">
       <a href="velos.html">Les vélos</a>
-      <a href="marques.html">Les marques</a>
+      <!-- Menu déroulant « Les marques » : au survol, les 4 marques apparaissent -->
+      <div class="menu-deroulant" data-titre="Les marques">
+        <a href="marques.html" class="declencheur">Les marques</a>
+        <div class="sous-menu"><div class="sous-menu-boite">
+          <a href="marque-drali.html">Drali Milano</a>
+          <a href="marque-regola.html">Regola</a>
+          <a href="marque-gusto.html">Gusto</a>
+          <a href="marque-mattio.html">Officine Mattio</a>
+        </div></div>
+      </div>
       <a href="studio.html" class="page-active">Le studio</a>
       <!-- Menu déroulant : au survol, deux choix apparaissent -->
-      <div class="menu-deroulant">
+      <div class="menu-deroulant" data-titre="Équipement">
         <a href="nutrition.html" class="declencheur">Équipement</a>
         <div class="sous-menu"><div class="sous-menu-boite">
           <a href="nutrition.html">Nutrition</a>

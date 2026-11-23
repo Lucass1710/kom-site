@@ -24,10 +24,19 @@
     <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav class="liens">
       <a href="velos.html">Les vélos</a>
-      <a href="marques.html" class="page-active">Les marques</a>
+      <!-- Menu déroulant « Les marques » : au survol, les 4 marques apparaissent -->
+      <div class="menu-deroulant" data-titre="Les marques">
+        <a href="marques.html" class="declencheur page-active">Les marques</a>
+        <div class="sous-menu"><div class="sous-menu-boite">
+          <a href="marque-drali.html">Drali Milano</a>
+          <a href="marque-regola.html">Regola</a>
+          <a href="marque-gusto.html">Gusto</a>
+          <a href="marque-mattio.html">Officine Mattio</a>
+        </div></div>
+      </div>
       <a href="studio.html">Le studio</a>
       <!-- Menu déroulant : au survol, deux choix apparaissent -->
-      <div class="menu-deroulant">
+      <div class="menu-deroulant" data-titre="Équipement">
         <a href="nutrition.html" class="declencheur">Équipement</a>
         <div class="sous-menu"><div class="sous-menu-boite">
           <a href="nutrition.html">Nutrition</a>
@@ -57,7 +66,7 @@
         <p>Une maison milanaise aujourd'hui tournée vers le carbone. Drali signe des vélos de route
           et de gravel à la fois élégants et performants. Sur certains modèles, la géométrie et la
           couleur peuvent être personnalisées.</p>
-        <a class="lien-dore" href="velos.html">Voir les modèles →</a>
+        <a class="lien-dore" href="marque-drali.html">Découvrir la marque →</a>
         <a class="lien-dore" href="https://www.dralimilano.it/" target="_blank" rel="noopener">Site de la marque ↗</a>
       </div>
       <div class="bloc">
@@ -66,7 +75,7 @@
         <p>Une marque italienne intimiste qui bouscule les codes du haut de gamme. Leur règle est
           simple : il n'y en a pas ! Montage à la carte, peinture 100 % personnalisable et
           positionnement tarifaire incomparable.</p>
-        <a class="lien-dore" href="velos.html">Voir les modèles →</a>
+        <a class="lien-dore" href="marque-regola.html">Découvrir la marque →</a>
         <a class="lien-dore" href="https://www.regolabikes.com/" target="_blank" rel="noopener">Site de la marque ↗</a>
       </div>
       <div class="bloc">
@@ -74,7 +83,7 @@
         <h3>Gusto</h3>
         <p>Le rapport équipement / prix ultime. Grâce à une maîtrise totale de sa production, Gusto
           bouscule les géants du cycle, avec des cadres monocoque en fibre Toray 1000.</p>
-        <a class="lien-dore" href="velos.html">Voir les modèles →</a>
+        <a class="lien-dore" href="marque-gusto.html">Découvrir la marque →</a>
         <a class="lien-dore" href="https://www.gustobike.fr/" target="_blank" rel="noopener">Site de la marque ↗</a>
       </div>
       <div class="bloc">
@@ -83,7 +92,7 @@
         <p>Au pied du Mont Viso, Officine Mattio incarne le Made in Italy : tous ses cadres carbone
           sont fabriqués et assemblés en Italie, avec la technologie « tube à tube » et une peinture
           personnalisable.</p>
-        <a class="lien-dore" href="velos.html">Voir les modèles →</a>
+        <a class="lien-dore" href="marque-mattio.html">Découvrir la marque →</a>
         <a class="lien-dore" href="https://www.officinemattio.com/" target="_blank" rel="noopener">Site de la marque ↗</a>
       </div>
     </div>
