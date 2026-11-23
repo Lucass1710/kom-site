@@ -154,9 +154,11 @@ if (listeAvis && !animationsReduites) {
     // Rien à faire si tous les avis sont déjà visibles (ordinateur) ou si on est en pause
     if (listeAvis.scrollWidth <= listeAvis.clientWidth + 5 || Date.now() < pauseJusqua) return;
     const cartes = [...listeAvis.querySelectorAll('.avis-carte')];
-    const largeur = cartes[0].offsetWidth + 16;                          // une carte + l'espace
+    const espace = parseFloat(getComputedStyle(listeAvis).columnGap) || 16;
+    const largeur = cartes[0].offsetWidth + espace;                       // une carte + l'espace
+    const auBout = listeAvis.scrollLeft + listeAvis.clientWidth >= listeAvis.scrollWidth - 5;
     const actuel = Math.round(listeAvis.scrollLeft / largeur);
-    const suivant = (actuel + 1) % cartes.length;                         // après le dernier, retour au premier
+    const suivant = auBout ? 0 : actuel + 1;                              // arrivé au bout : retour au premier
     listeAvis.scrollTo({ left: suivant * largeur, behavior: 'smooth' });
   }, 5000);
 }
