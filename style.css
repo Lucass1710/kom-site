@@ -2005,3 +2005,36 @@ h1, h2, h3,
   overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
 }
 .page-404 { min-height: 70vh; padding-top: 12rem; }
+
+/* ============================================================
+   W. RÈGLES DE SITE VITRINE
+   ============================================================ */
+/* 6. Petits titres en capitales : un peu plus grands et plus clairs, pour bien se lire */
+.sur-titre { font-size: 0.86rem; color: #c9a978; }
+.petit-titre, .type-velo { font-size: 0.8rem; color: #c4c4c4; }
+@media (max-width: 700px) {
+  .sur-titre { font-size: 0.8rem; letter-spacing: 0.24em; }
+}
+
+/* 7. « Vous aimerez aussi » en bas des fiches vélo */
+.aussi .sur-titre { margin-bottom: 2rem; }
+.aussi-liste {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+  max-width: 1100px; margin: 0 auto;
+}
+.aussi-carte {
+  display: flex; flex-direction: column; align-items: center; gap: 0.35rem;
+  text-decoration: none; color: #fff; padding-bottom: 1.4rem;
+  border: var(--bord-cadre) solid #000; background: rgba(255,255,255,0.06);
+  transition: border-color 0.4s;
+}
+.aussi-carte:hover { border-color: var(--or); }
+.aussi-carte img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; margin-bottom: 0.9rem; }
+.aussi-marque { color: #c9a978; font-size: 0.72rem; letter-spacing: 0.24em; text-transform: uppercase; }
+.aussi-nom { font-family: var(--police-titre); font-weight: 600; font-size: 1.6rem; }
+.aussi-prix { color: #d6d6d6; font-size: 0.9rem; }
+@media (max-width: 700px) {
+  .aussi-liste { display: flex; gap: 0.8rem; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 0.6rem; }   /* sur téléphone : rangée qu on fait glisser */
+  .aussi-carte { flex: 0 0 70%; scroll-snap-align: start; }
+  .aussi-nom { font-size: 1.3rem; }
+}
