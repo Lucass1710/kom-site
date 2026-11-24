@@ -9,10 +9,21 @@
   <!-- Version de test : demande aux moteurs de recherche (Google…) de ne pas afficher ce site. À retirer à la mise en ligne finale. -->
   <meta name="robots" content="noindex, nofollow">
   <title>Gusto GTR Elite Ultra – KOM Cycling Studio</title>
-  <!-- Polices du site (Google Fonts) : Cormorant Garamond pour les titres, Montserrat pour les textes -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Montserrat:wght@400;500;600&display=swap">
+  <!-- Description pour Google, aperçu quand on partage le lien, et icône d'onglet -->
+  <meta name="description" content="Gusto GTR Elite Ultra, le meilleur rapport équipement / prix de Gusto. Découvrez-le au showroom KOM Cycling Studio à Draguignan, sur rendez-vous.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="KOM Cycling Studio">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Gusto GTR Elite Ultra – KOM Cycling Studio">
+  <meta property="og:description" content="Gusto GTR Elite Ultra, le meilleur rapport équipement / prix de Gusto. Découvrez-le au showroom KOM Cycling Studio à Draguignan, sur rendez-vous.">
+  <meta property="og:url" content="https://komcyclingstudio.com/fiche-gtr-elite-ultra.html">
+  <meta property="og:image" content="https://komcyclingstudio.com/images/partage.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <!-- Polices du site (hébergées sur le site, voir polices.css) : Cormorant Garamond pour les titres, Montserrat pour les textes -->
+  <link rel="stylesheet" href="polices.css">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -24,10 +35,10 @@
     <!-- Bouton ☰ (visible seulement sur téléphone) -->
     <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav class="liens">
-      <a href="velos.html" class="page-active">Les vélos</a>
+      <a href="studio.html">Le studio</a>
       <!-- Menu déroulant « Les marques » : au survol, les 4 marques apparaissent -->
       <div class="menu-deroulant" data-titre="Les marques">
-        <a href="marques.html" class="declencheur">Les marques</a>
+        <a href="marque-drali.html" class="declencheur">Les marques</a>
         <div class="sous-menu"><div class="sous-menu-boite">
           <a href="marque-drali.html">Drali Milano</a>
           <a href="marque-regola.html">Regola</a>
@@ -35,11 +46,13 @@
           <a href="marque-mattio.html">Officine Mattio</a>
         </div></div>
       </div>
-      <a href="studio.html">Le studio</a>
-      <!-- Menu déroulant : au survol, deux choix apparaissent -->
-      <div class="menu-deroulant" data-titre="Équipement">
-        <a href="nutrition.html" class="declencheur">Équipement</a>
+      <a href="velos.html" class="page-active">Les vélos</a>
+      <!-- Menu déroulant « Nos services » : au survol, les 4 services apparaissent -->
+      <div class="menu-deroulant" data-titre="Nos services">
+        <a href="etude-posturale.html" class="declencheur">Nos services</a>
         <div class="sous-menu"><div class="sous-menu-boite">
+          <a href="etude-posturale.html">Étude posturale</a>
+          <a href="financement.html">Financement</a>
           <a href="nutrition.html">Nutrition</a>
           <a href="textile.html">Textile</a>
         </div></div>
@@ -54,28 +67,28 @@
   <section class="fiche-diapo">
     <!-- Pearl White (blanc) -->
     <img src="images/gusto-gtr-elite-ultra.jpg" alt="Gusto GTR Elite Ultra Pearl White" data-coloris="pearl-white">
-    <img src="images/gtr/pearl-white-2.jpg" alt="GTR Elite Ultra Pearl White, vue de profil" data-coloris="pearl-white">
-    <img src="images/gtr/pearl-white-3.jpg" alt="GTR Elite Ultra Pearl White, vue de trois quarts" data-coloris="pearl-white">
-    <img src="images/gtr/pearl-white-4.jpg" alt="GTR Elite Ultra Pearl White, détail du cadre" data-coloris="pearl-white">
-    <img src="images/gtr/pearl-white-5.jpg" alt="GTR Elite Ultra Pearl White, potence" data-coloris="pearl-white">
-    <img src="images/gtr/pearl-white-6.jpg" alt="GTR Elite Ultra Pearl White, fourche" data-coloris="pearl-white">
-    <img src="images/gtr/pearl-white-7.jpg" alt="GTR Elite Ultra Pearl White, détail" data-coloris="pearl-white">
-    <img src="images/gtr/pearl-white-8.jpg" alt="GTR Elite Ultra Pearl White, vue de face" data-coloris="pearl-white">
+    <img data-src="images/gtr/pearl-white-2.jpg" alt="GTR Elite Ultra Pearl White, vue de profil" data-coloris="pearl-white">
+    <img data-src="images/gtr/pearl-white-3.jpg" alt="GTR Elite Ultra Pearl White, vue de trois quarts" data-coloris="pearl-white">
+    <img data-src="images/gtr/pearl-white-4.jpg" alt="GTR Elite Ultra Pearl White, détail du cadre" data-coloris="pearl-white">
+    <img data-src="images/gtr/pearl-white-5.jpg" alt="GTR Elite Ultra Pearl White, potence" data-coloris="pearl-white">
+    <img data-src="images/gtr/pearl-white-6.jpg" alt="GTR Elite Ultra Pearl White, fourche" data-coloris="pearl-white">
+    <img data-src="images/gtr/pearl-white-7.jpg" alt="GTR Elite Ultra Pearl White, détail" data-coloris="pearl-white">
+    <img data-src="images/gtr/pearl-white-8.jpg" alt="GTR Elite Ultra Pearl White, vue de face" data-coloris="pearl-white">
     <!-- Flux Orange -->
-    <img src="images/gtr/flux-orange-1.jpg" alt="GTR Elite Ultra Flux Orange" data-coloris="flux-orange">
-    <img src="images/gtr/flux-orange-2.jpg" alt="GTR Elite Ultra Flux Orange, détail du cadre" data-coloris="flux-orange">
+    <img data-src="images/gtr/flux-orange-1.jpg" alt="GTR Elite Ultra Flux Orange" data-coloris="flux-orange">
+    <img data-src="images/gtr/flux-orange-2.jpg" alt="GTR Elite Ultra Flux Orange, détail du cadre" data-coloris="flux-orange">
     <!-- Team Gold -->
-    <img src="images/gtr/team-gold-1.jpg" alt="GTR Elite Ultra Team Gold" data-coloris="team-gold">
-    <img src="images/gtr/team-gold-2.jpg" alt="GTR Elite Ultra Team Gold, détail du cadre" data-coloris="team-gold">
+    <img data-src="images/gtr/team-gold-1.jpg" alt="GTR Elite Ultra Team Gold" data-coloris="team-gold">
+    <img data-src="images/gtr/team-gold-2.jpg" alt="GTR Elite Ultra Team Gold, détail du cadre" data-coloris="team-gold">
     <!-- Jet Black -->
-    <img src="images/gtr/jet-black-1.jpg" alt="GTR Elite Ultra Jet Black" data-coloris="jet-black">
-    <img src="images/gtr/jet-black-2.jpg" alt="GTR Elite Ultra Jet Black, détail de la tige de selle" data-coloris="jet-black">
+    <img data-src="images/gtr/jet-black-1.jpg" alt="GTR Elite Ultra Jet Black" data-coloris="jet-black">
+    <img data-src="images/gtr/jet-black-2.jpg" alt="GTR Elite Ultra Jet Black, détail de la tige de selle" data-coloris="jet-black">
 
     <!-- Photos sur fond blanc (affichées après les fonds noirs) -->
-    <img src="images/gtr/pearl-white-blanc.jpg" alt="GTR Elite Ultra Pearl White, gros plan" data-coloris="pearl-white" data-fond="blanc">
-    <img src="images/gtr/flux-orange-blanc.jpg" alt="GTR Elite Ultra Flux Orange, gros plan" data-coloris="flux-orange" data-fond="blanc">
-    <img src="images/gtr/team-gold-blanc.jpg" alt="GTR Elite Ultra Team Gold, gros plan" data-coloris="team-gold" data-fond="blanc">
-    <img src="images/gtr/jet-black-blanc.jpg" alt="GTR Elite Ultra Jet Black, gros plan" data-coloris="jet-black" data-fond="blanc">
+    <img data-src="images/gtr/pearl-white-blanc.jpg" alt="GTR Elite Ultra Pearl White, gros plan" data-coloris="pearl-white" data-fond="blanc">
+    <img data-src="images/gtr/flux-orange-blanc.jpg" alt="GTR Elite Ultra Flux Orange, gros plan" data-coloris="flux-orange" data-fond="blanc">
+    <img data-src="images/gtr/team-gold-blanc.jpg" alt="GTR Elite Ultra Team Gold, gros plan" data-coloris="team-gold" data-fond="blanc">
+    <img data-src="images/gtr/jet-black-blanc.jpg" alt="GTR Elite Ultra Jet Black, gros plan" data-coloris="jet-black" data-fond="blanc">
 
     <button class="fleche fleche-gauche" aria-label="Photo précédente">‹</button>
     <button class="fleche fleche-droite" aria-label="Photo suivante">›</button>
@@ -106,7 +119,7 @@
       <p class="fiche-texte">
         Le rapport qualité / prix ultime. La fibre de carbone T1000 couplée au matériau Innegra apporte énormément de confort.
       </p>
-      <p class="fiche-prix"><span>À partir de</span>2 750 €</p>
+      <p class="fiche-prix"><span>À partir de</span>2 750 € <small class="ttc">TTC</small></p>
       <a class="bouton" href="rendez-vous.html">Demander des informations</a>
     </div>
 
@@ -143,19 +156,20 @@
       </div>
       <div class="colonne">
         <p class="sur-titre">Le site</p>
-        <p><a href="velos.html">Les vélos</a></p>
-        <p><a href="marques.html">Les marques</a></p>
         <p><a href="studio.html">Le studio</a></p>
+        <p><a href="marque-drali.html">Les marques</a></p>
+        <p><a href="velos.html">Les vélos</a></p>
+        <p><a href="etude-posturale.html">Étude posturale</a> · <a href="financement.html">Financement</a></p>
         <p><a href="nutrition.html">Nutrition</a> · <a href="textile.html">Textile</a></p>
         <p><a href="rendez-vous.html">Nous contacter</a></p>
       </div>
       <div class="colonne">
         <p class="sur-titre">Nos marques</p>
-        <p>Drali Milano · Regola · Gusto · Officine Mattio</p>
+        <p><a href="marque-drali.html">Drali Milano</a> · <a href="marque-regola.html">Regola</a> · <a href="marque-gusto.html">Gusto</a> · <a href="marque-mattio.html">Officine Mattio</a></p>
         <p class="pied-note">Nutrition et textile : 226ERS · GripGrab · OUTWET</p>
       </div>
     </div>
-    <p class="pied-bas">© 2026 KOM Cycling Studio · Vélos de route italiens d'exception</p>
+    <p class="pied-bas">© 2026 KOM Cycling Studio · Vélos de route italiens d'exception · <a href="mentions-legales.html">Mentions légales</a> · <a href="confidentialite.html">Confidentialité</a></p>
   </footer>
 
   <!-- Le programme commun aux fiches : menu + photos qui défilent -->

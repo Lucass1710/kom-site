@@ -9,10 +9,21 @@
   <!-- Version de test : demande aux moteurs de recherche (Google…) de ne pas afficher ce site. À retirer à la mise en ligne finale. -->
   <meta name="robots" content="noindex, nofollow">
   <title>Drali Milano Iridio – KOM Cycling Studio</title>
-  <!-- Polices du site (Google Fonts) : Cormorant Garamond pour les titres, Montserrat pour les textes -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Montserrat:wght@400;500;600&display=swap">
+  <!-- Description pour Google, aperçu quand on partage le lien, et icône d'onglet -->
+  <meta name="description" content="Drali Milano Iridio, le modèle aéro de Drali Milano, cadre de 890 g. Découvrez-le au showroom KOM Cycling Studio à Draguignan, sur rendez-vous.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="KOM Cycling Studio">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Drali Milano Iridio – KOM Cycling Studio">
+  <meta property="og:description" content="Drali Milano Iridio, le modèle aéro de Drali Milano, cadre de 890 g. Découvrez-le au showroom KOM Cycling Studio à Draguignan, sur rendez-vous.">
+  <meta property="og:url" content="https://komcyclingstudio.com/fiche-iridio.html">
+  <meta property="og:image" content="https://komcyclingstudio.com/images/partage.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <!-- Polices du site (hébergées sur le site, voir polices.css) : Cormorant Garamond pour les titres, Montserrat pour les textes -->
+  <link rel="stylesheet" href="polices.css">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -24,10 +35,10 @@
     <!-- Bouton ☰ (visible seulement sur téléphone) -->
     <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav class="liens">
-      <a href="velos.html" class="page-active">Les vélos</a>
+      <a href="studio.html">Le studio</a>
       <!-- Menu déroulant « Les marques » : au survol, les 4 marques apparaissent -->
       <div class="menu-deroulant" data-titre="Les marques">
-        <a href="marques.html" class="declencheur">Les marques</a>
+        <a href="marque-drali.html" class="declencheur">Les marques</a>
         <div class="sous-menu"><div class="sous-menu-boite">
           <a href="marque-drali.html">Drali Milano</a>
           <a href="marque-regola.html">Regola</a>
@@ -35,11 +46,13 @@
           <a href="marque-mattio.html">Officine Mattio</a>
         </div></div>
       </div>
-      <a href="studio.html">Le studio</a>
-      <!-- Menu déroulant : au survol, deux choix apparaissent -->
-      <div class="menu-deroulant" data-titre="Équipement">
-        <a href="nutrition.html" class="declencheur">Équipement</a>
+      <a href="velos.html" class="page-active">Les vélos</a>
+      <!-- Menu déroulant « Nos services » : au survol, les 4 services apparaissent -->
+      <div class="menu-deroulant" data-titre="Nos services">
+        <a href="etude-posturale.html" class="declencheur">Nos services</a>
         <div class="sous-menu"><div class="sous-menu-boite">
+          <a href="etude-posturale.html">Étude posturale</a>
+          <a href="financement.html">Financement</a>
           <a href="nutrition.html">Nutrition</a>
           <a href="textile.html">Textile</a>
         </div></div>
@@ -53,17 +66,21 @@
        "ambiance" (extérieur) ou "blanc" (catalogue). Les fonds noirs s'affichent toujours en premier. -->
   <section class="fiche-diapo">
     <img src="images/drali-iridio-team-edition.jpg" alt="Iridio Team Edition" data-coloris="tous">
-    <img src="images/iridio/iridio-2.jpg" alt="Iridio, détail" data-coloris="tous">
-    <img src="images/iridio/iridio-3.jpg" alt="Iridio, détail" data-coloris="tous">
-    <img src="images/iridio/ice-core-ambiance-1.jpg" alt="Iridio Ice Core en extérieur" data-coloris="ice-core" data-fond="ambiance">
-    <img src="images/iridio/ice-core-ambiance-2.jpg" alt="Iridio Ice Core, détail" data-coloris="ice-core" data-fond="ambiance">
-    <img src="images/iridio/ice-core-ambiance-3.jpg" alt="Iridio Ice Core en sortie" data-coloris="ice-core" data-fond="ambiance">
-    <img src="images/iridio/ice-core-ambiance-4.jpg" alt="Iridio Ice Core en sortie" data-coloris="ice-core" data-fond="ambiance">
-    <img src="images/iridio/ice-core-ambiance-5.jpg" alt="Iridio Ice Core en sortie" data-coloris="ice-core" data-fond="ambiance">
-    <img src="images/iridio/midnight-prism-blanc.jpg" alt="Iridio Midnight Prism" data-coloris="midnight-prism" data-fond="blanc">
-    <img src="images/iridio/sunrise-blanc.jpg" alt="Iridio Sunrise" data-coloris="sunrise" data-fond="blanc">
-    <img src="images/iridio/noir-blanc.jpg" alt="Iridio Noir" data-coloris="noir" data-fond="blanc">
-    <img src="images/iridio/ice-core-blanc.jpg" alt="Iridio Ice Core" data-coloris="ice-core" data-fond="blanc">
+    <img data-src="images/iridio/iridio-2.jpg" alt="Iridio, détail" data-coloris="tous">
+    <img data-src="images/iridio/iridio-3.jpg" alt="Iridio, détail" data-coloris="tous">
+    <!-- Ice Core : gros plans en studio (fond sombre) -->
+    <img data-src="images/iridio/ice-core-detail-1.jpg" alt="Iridio Ice Core, détail du tube supérieur" data-coloris="ice-core">
+    <img data-src="images/iridio/ice-core-detail-2.jpg" alt="Iridio Ice Core, détail de la tige de selle" data-coloris="ice-core">
+    <img data-src="images/iridio/ice-core-detail-3.jpg" alt="Iridio Ice Core, détail du cadre" data-coloris="ice-core">
+    <img data-src="images/iridio/ice-core-ambiance-1.jpg" alt="Iridio Ice Core en extérieur" data-coloris="ice-core" data-fond="ambiance">
+    <img data-src="images/iridio/ice-core-ambiance-2.jpg" alt="Iridio Ice Core, détail" data-coloris="ice-core" data-fond="ambiance">
+    <img data-src="images/iridio/ice-core-ambiance-3.jpg" alt="Iridio Ice Core en sortie" data-coloris="ice-core" data-fond="ambiance">
+    <img data-src="images/iridio/ice-core-ambiance-4.jpg" alt="Iridio Ice Core en sortie" data-coloris="ice-core" data-fond="ambiance">
+    <img data-src="images/iridio/ice-core-ambiance-5.jpg" alt="Iridio Ice Core en sortie" data-coloris="ice-core" data-fond="ambiance">
+    <img data-src="images/iridio/midnight-prism-blanc.jpg" alt="Iridio Midnight Prism" data-coloris="midnight-prism" data-fond="blanc">
+    <img data-src="images/iridio/sunrise-blanc.jpg" alt="Iridio Sunrise" data-coloris="sunrise" data-fond="blanc">
+    <img data-src="images/iridio/noir-blanc.jpg" alt="Iridio Noir" data-coloris="noir" data-fond="blanc">
+    <img data-src="images/iridio/ice-core-blanc.jpg" alt="Iridio Ice Core" data-coloris="ice-core" data-fond="blanc">
 
     <button class="fleche fleche-gauche" aria-label="Photo précédente">‹</button>
     <button class="fleche fleche-droite" aria-label="Photo suivante">›</button>
@@ -97,7 +114,7 @@
         sans peinture, pour un vélo rapide et léger. Comme chaque vélo du studio,
         il est monté à la carte, selon vos envies et votre position.
       </p>
-      <p class="fiche-prix"><span>À partir de</span>5 890 €</p>
+      <p class="fiche-prix"><span>À partir de</span>5 890 € <small class="ttc">TTC</small></p>
       <a class="bouton" href="rendez-vous.html">Demander des informations</a>
     </div>
 
@@ -135,19 +152,20 @@
       </div>
       <div class="colonne">
         <p class="sur-titre">Le site</p>
-        <p><a href="velos.html">Les vélos</a></p>
-        <p><a href="marques.html">Les marques</a></p>
         <p><a href="studio.html">Le studio</a></p>
+        <p><a href="marque-drali.html">Les marques</a></p>
+        <p><a href="velos.html">Les vélos</a></p>
+        <p><a href="etude-posturale.html">Étude posturale</a> · <a href="financement.html">Financement</a></p>
         <p><a href="nutrition.html">Nutrition</a> · <a href="textile.html">Textile</a></p>
         <p><a href="rendez-vous.html">Nous contacter</a></p>
       </div>
       <div class="colonne">
         <p class="sur-titre">Nos marques</p>
-        <p>Drali Milano · Regola · Gusto · Officine Mattio</p>
+        <p><a href="marque-drali.html">Drali Milano</a> · <a href="marque-regola.html">Regola</a> · <a href="marque-gusto.html">Gusto</a> · <a href="marque-mattio.html">Officine Mattio</a></p>
         <p class="pied-note">Nutrition et textile : 226ERS · GripGrab · OUTWET</p>
       </div>
     </div>
-    <p class="pied-bas">© 2026 KOM Cycling Studio · Vélos de route italiens d'exception</p>
+    <p class="pied-bas">© 2026 KOM Cycling Studio · Vélos de route italiens d'exception · <a href="mentions-legales.html">Mentions légales</a> · <a href="confidentialite.html">Confidentialité</a></p>
   </footer>
 
   <!-- Le programme commun aux fiches : menu + photos qui défilent -->

@@ -9,10 +9,21 @@
   <!-- Version de test : demande aux moteurs de recherche (Google…) de ne pas afficher ce site. À retirer à la mise en ligne finale. -->
   <meta name="robots" content="noindex, nofollow">
   <title>Gusto GTG – KOM Cycling Studio</title>
-  <!-- Polices du site (Google Fonts) : Cormorant Garamond pour les titres, Montserrat pour les textes -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Montserrat:wght@400;500;600&display=swap">
+  <!-- Description pour Google, aperçu quand on partage le lien, et icône d'onglet -->
+  <meta name="description" content="Gusto GTG, le gravel carbone de Gusto. Découvrez-le au showroom KOM Cycling Studio à Draguignan, sur rendez-vous.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="KOM Cycling Studio">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Gusto GTG – KOM Cycling Studio">
+  <meta property="og:description" content="Gusto GTG, le gravel carbone de Gusto. Découvrez-le au showroom KOM Cycling Studio à Draguignan, sur rendez-vous.">
+  <meta property="og:url" content="https://komcyclingstudio.com/fiche-gtg.html">
+  <meta property="og:image" content="https://komcyclingstudio.com/images/partage.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <!-- Polices du site (hébergées sur le site, voir polices.css) : Cormorant Garamond pour les titres, Montserrat pour les textes -->
+  <link rel="stylesheet" href="polices.css">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -24,10 +35,10 @@
     <!-- Bouton ☰ (visible seulement sur téléphone) -->
     <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav class="liens">
-      <a href="velos.html" class="page-active">Les vélos</a>
+      <a href="studio.html">Le studio</a>
       <!-- Menu déroulant « Les marques » : au survol, les 4 marques apparaissent -->
       <div class="menu-deroulant" data-titre="Les marques">
-        <a href="marques.html" class="declencheur">Les marques</a>
+        <a href="marque-drali.html" class="declencheur">Les marques</a>
         <div class="sous-menu"><div class="sous-menu-boite">
           <a href="marque-drali.html">Drali Milano</a>
           <a href="marque-regola.html">Regola</a>
@@ -35,11 +46,13 @@
           <a href="marque-mattio.html">Officine Mattio</a>
         </div></div>
       </div>
-      <a href="studio.html">Le studio</a>
-      <!-- Menu déroulant : au survol, deux choix apparaissent -->
-      <div class="menu-deroulant" data-titre="Équipement">
-        <a href="nutrition.html" class="declencheur">Équipement</a>
+      <a href="velos.html" class="page-active">Les vélos</a>
+      <!-- Menu déroulant « Nos services » : au survol, les 4 services apparaissent -->
+      <div class="menu-deroulant" data-titre="Nos services">
+        <a href="etude-posturale.html" class="declencheur">Nos services</a>
         <div class="sous-menu"><div class="sous-menu-boite">
+          <a href="etude-posturale.html">Étude posturale</a>
+          <a href="financement.html">Financement</a>
           <a href="nutrition.html">Nutrition</a>
           <a href="textile.html">Textile</a>
         </div></div>
@@ -54,32 +67,32 @@
   <section class="fiche-diapo">
     <!-- Blanc nacré -->
     <img src="images/gusto-gtg.jpg" alt="Gusto GTG Blanc nacré" data-coloris="blanc-nacre">
-    <img src="images/gtg/blanc-nacre-2.jpg" alt="GTG Blanc nacré, autre vue" data-coloris="blanc-nacre">
-    <img src="images/gtg/blanc-nacre-3.jpg" alt="GTG Blanc nacré, fourche" data-coloris="blanc-nacre">
-    <img src="images/gtg/blanc-nacre-4.jpg" alt="GTG Blanc nacré, détail du cadre" data-coloris="blanc-nacre">
-    <img src="images/gtg/blanc-nacre-5.jpg" alt="GTG Blanc nacré, détail du cadre" data-coloris="blanc-nacre">
-    <img src="images/gtg/blanc-nacre-6.jpg" alt="GTG Blanc nacré, vue de face" data-coloris="blanc-nacre">
-    <img src="images/gtg/blanc-nacre-7.jpg" alt="GTG Blanc nacré, cintre" data-coloris="blanc-nacre">
-    <img src="images/gtg/blanc-nacre-8.jpg" alt="GTG Blanc nacré, potence" data-coloris="blanc-nacre">
+    <img data-src="images/gtg/blanc-nacre-2.jpg" alt="GTG Blanc nacré, autre vue" data-coloris="blanc-nacre">
+    <img data-src="images/gtg/blanc-nacre-3.jpg" alt="GTG Blanc nacré, fourche" data-coloris="blanc-nacre">
+    <img data-src="images/gtg/blanc-nacre-4.jpg" alt="GTG Blanc nacré, détail du cadre" data-coloris="blanc-nacre">
+    <img data-src="images/gtg/blanc-nacre-5.jpg" alt="GTG Blanc nacré, détail du cadre" data-coloris="blanc-nacre">
+    <img data-src="images/gtg/blanc-nacre-6.jpg" alt="GTG Blanc nacré, vue de face" data-coloris="blanc-nacre">
+    <img data-src="images/gtg/blanc-nacre-7.jpg" alt="GTG Blanc nacré, cintre" data-coloris="blanc-nacre">
+    <img data-src="images/gtg/blanc-nacre-8.jpg" alt="GTG Blanc nacré, potence" data-coloris="blanc-nacre">
     <!-- Vert Forêt -->
-    <img src="images/gtg/vert-foret-1.jpg" alt="GTG Vert Forêt, vélo entier" data-coloris="vert-foret">
-    <img src="images/gtg/vert-foret-2.jpg" alt="GTG Vert Forêt, autre vue" data-coloris="vert-foret">
-    <img src="images/gtg/vert-foret-3.jpg" alt="GTG Vert Forêt, détail" data-coloris="vert-foret">
-    <img src="images/gtg/vert-foret-4.jpg" alt="GTG Vert Forêt, détail du cadre" data-coloris="vert-foret">
+    <img data-src="images/gtg/vert-foret-1.jpg" alt="GTG Vert Forêt, vélo entier" data-coloris="vert-foret">
+    <img data-src="images/gtg/vert-foret-2.jpg" alt="GTG Vert Forêt, autre vue" data-coloris="vert-foret">
+    <img data-src="images/gtg/vert-foret-3.jpg" alt="GTG Vert Forêt, détail" data-coloris="vert-foret">
+    <img data-src="images/gtg/vert-foret-4.jpg" alt="GTG Vert Forêt, détail du cadre" data-coloris="vert-foret">
     <!-- Or Team -->
-    <img src="images/gtg/or-team-1.jpg" alt="GTG Or Team, vélo entier" data-coloris="or-team">
-    <img src="images/gtg/or-team-2.jpg" alt="GTG Or Team, autre vue" data-coloris="or-team">
-    <img src="images/gtg/or-team-3.jpg" alt="GTG Or Team, détail du cadre" data-coloris="or-team">
+    <img data-src="images/gtg/or-team-1.jpg" alt="GTG Or Team, vélo entier" data-coloris="or-team">
+    <img data-src="images/gtg/or-team-2.jpg" alt="GTG Or Team, autre vue" data-coloris="or-team">
+    <img data-src="images/gtg/or-team-3.jpg" alt="GTG Or Team, détail du cadre" data-coloris="or-team">
     <!-- Noir Profond -->
-    <img src="images/gtg/noir-profond-1.jpg" alt="GTG Noir Profond, vélo entier" data-coloris="noir-profond">
-    <img src="images/gtg/noir-profond-2.jpg" alt="GTG Noir Profond, autre vue" data-coloris="noir-profond">
-    <img src="images/gtg/noir-profond-3.jpg" alt="GTG Noir Profond, cintre" data-coloris="noir-profond">
+    <img data-src="images/gtg/noir-profond-1.jpg" alt="GTG Noir Profond, vélo entier" data-coloris="noir-profond">
+    <img data-src="images/gtg/noir-profond-2.jpg" alt="GTG Noir Profond, autre vue" data-coloris="noir-profond">
+    <img data-src="images/gtg/noir-profond-3.jpg" alt="GTG Noir Profond, cintre" data-coloris="noir-profond">
 
     <!-- Photos sur fond blanc (affichées après les fonds noirs) -->
-    <img src="images/gtg/blanc-nacre-blanc.jpg" alt="GTG Blanc nacré" data-coloris="blanc-nacre" data-fond="blanc">
-    <img src="images/gtg/noir-profond-blanc.jpg" alt="GTG Noir Profond" data-coloris="noir-profond" data-fond="blanc">
-    <img src="images/gtg/or-team-blanc.jpg" alt="GTG Or Team" data-coloris="or-team" data-fond="blanc">
-    <img src="images/gtg/vert-foret-blanc.jpg" alt="GTG Vert Forêt" data-coloris="vert-foret" data-fond="blanc">
+    <img data-src="images/gtg/blanc-nacre-blanc.jpg" alt="GTG Blanc nacré" data-coloris="blanc-nacre" data-fond="blanc">
+    <img data-src="images/gtg/noir-profond-blanc.jpg" alt="GTG Noir Profond" data-coloris="noir-profond" data-fond="blanc">
+    <img data-src="images/gtg/or-team-blanc.jpg" alt="GTG Or Team" data-coloris="or-team" data-fond="blanc">
+    <img data-src="images/gtg/vert-foret-blanc.jpg" alt="GTG Vert Forêt" data-coloris="vert-foret" data-fond="blanc">
 
     <button class="fleche fleche-gauche" aria-label="Photo précédente">‹</button>
     <button class="fleche fleche-droite" aria-label="Photo suivante">›</button>
@@ -110,7 +123,7 @@
       <p class="fiche-texte">
         Le gravel carbone au service du cycliste ! Confortable, maniable, performant : là aussi, la marque Gusto propose un produit au rapport qualité / prix incroyable.
       </p>
-      <p class="fiche-prix"><span>À partir de</span>2 590 €</p>
+      <p class="fiche-prix"><span>À partir de</span>2 590 € <small class="ttc">TTC</small></p>
       <a class="bouton" href="rendez-vous.html">Demander des informations</a>
     </div>
 
@@ -148,19 +161,20 @@
       </div>
       <div class="colonne">
         <p class="sur-titre">Le site</p>
-        <p><a href="velos.html">Les vélos</a></p>
-        <p><a href="marques.html">Les marques</a></p>
         <p><a href="studio.html">Le studio</a></p>
+        <p><a href="marque-drali.html">Les marques</a></p>
+        <p><a href="velos.html">Les vélos</a></p>
+        <p><a href="etude-posturale.html">Étude posturale</a> · <a href="financement.html">Financement</a></p>
         <p><a href="nutrition.html">Nutrition</a> · <a href="textile.html">Textile</a></p>
         <p><a href="rendez-vous.html">Nous contacter</a></p>
       </div>
       <div class="colonne">
         <p class="sur-titre">Nos marques</p>
-        <p>Drali Milano · Regola · Gusto · Officine Mattio</p>
+        <p><a href="marque-drali.html">Drali Milano</a> · <a href="marque-regola.html">Regola</a> · <a href="marque-gusto.html">Gusto</a> · <a href="marque-mattio.html">Officine Mattio</a></p>
         <p class="pied-note">Nutrition et textile : 226ERS · GripGrab · OUTWET</p>
       </div>
     </div>
-    <p class="pied-bas">© 2026 KOM Cycling Studio · Vélos de route italiens d'exception</p>
+    <p class="pied-bas">© 2026 KOM Cycling Studio · Vélos de route italiens d'exception · <a href="mentions-legales.html">Mentions légales</a> · <a href="confidentialite.html">Confidentialité</a></p>
   </footer>
 
   <!-- Le programme commun aux fiches : menu + photos qui défilent -->

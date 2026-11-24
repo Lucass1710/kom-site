@@ -986,11 +986,11 @@ img.carte-photo.fond-blanc { background: #fff; }   /* dans les cartes : panneau 
   .menu.ouvert .liens .sous-menu-boite a { opacity: 1; transform: none; }
   .menu.ouvert .liens a:nth-of-type(2) { transition-delay: 0.05s; }
 
-  /* Équipement : un petit titre doré, puis Nutrition et Textile */
+  /* Menus déroulants (Les marques, Nos services) : un petit titre doré, puis les choix */
   .menu-deroulant { display: block; margin: 0.8rem 0; text-align: center; }
   .liens .menu-deroulant .declencheur { display: none; }
   .menu-deroulant::before {
-    content: attr(data-titre);            /* « Les marques » ou « Équipement » */
+    content: attr(data-titre);            /* « Les marques » ou « Nos services » */
     display: block;
     color: var(--or);
     font-size: 0.7rem;
@@ -1956,3 +1956,52 @@ h1, h2, h3,
   -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 18%, #000 82%, transparent 100%);
           mask-image: linear-gradient(to right, transparent 0%, #000 18%, #000 82%, transparent 100%);
 }
+
+/* ============================================================
+   U. MENU ☰ SUR TÉLÉPHONE EN ACCORDÉON : seuls les 5 onglets s'affichent ;
+   « Les marques » et « Nos services » se déplient d'un appui (le programme
+   est dans menu.js), avec une petite flèche qui pivote.
+   ============================================================ */
+@media (max-width: 700px) {
+  .menu-deroulant { margin: 0; }
+  .menu-deroulant::before { display: none; }                 /* plus de petit titre doré */
+  .liens .menu-deroulant .declencheur { display: inline-block; }
+  /* la flèche : vers le bas quand c'est fermé, vers le haut quand c'est ouvert */
+  .menu-deroulant:hover .declencheur::after,
+  .menu-deroulant:focus-within .declencheur::after { transform: translateY(-3px) rotate(45deg); }
+  .menu-deroulant.deplie .declencheur::after { transform: translateY(1px) rotate(-135deg); }
+  /* les choix : repliés au repos… */
+  .menu-deroulant .sous-menu {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.45s ease, opacity 0.35s ease;
+  }
+  /* …et dépliés après un appui */
+  .menu-deroulant.deplie .sous-menu { max-height: 22rem; opacity: 1; }
+  .liens .sous-menu-boite a { padding: 0.55rem 1rem; }
+}
+
+/* ============================================================
+   V. PAGES LÉGALES (Mentions légales, Confidentialité)
+   ============================================================ */
+.page-legale { padding-top: 9rem; text-align: left; max-width: 780px; margin: 0 auto; }
+.page-legale .sur-titre, .page-legale .titre-section { text-align: center; }
+.page-legale h2 {
+  font-family: var(--police-titre); font-weight: 600; font-size: 1.5rem;
+  color: #fff; margin: 2.5rem 0 0.8rem;
+}
+.page-legale p { color: #d6d6d6; line-height: 1.8; margin: 0; }
+.page-legale a { color: var(--or); }
+.a-completer {                       /* les informations que le studio doit encore fournir */
+  color: #000; background: var(--or); padding: 0 0.4rem; font-size: 0.85em; font-weight: 600;
+}
+.pied-bas a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.fiche-prix .ttc { font-family: var(--police-texte); font-size: 0.55em; letter-spacing: 0.15em; color: #b5b5b5; }
+
+/* Texte présent pour Google et les lecteurs d'écran, mais invisible à l'écran */
+.titre-invisible {
+  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+.page-404 { min-height: 70vh; padding-top: 12rem; }

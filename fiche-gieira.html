@@ -9,10 +9,21 @@
   <!-- Version de test : demande aux moteurs de recherche (Google…) de ne pas afficher ce site. À retirer à la mise en ligne finale. -->
   <meta name="robots" content="noindex, nofollow">
   <title>Regola Gieira – KOM Cycling Studio</title>
-  <!-- Polices du site (Google Fonts) : Cormorant Garamond pour les titres, Montserrat pour les textes -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Montserrat:wght@400;500;600&display=swap">
+  <!-- Description pour Google, aperçu quand on partage le lien, et icône d'onglet -->
+  <meta name="description" content="Regola Gieira, le gravel de Regola. Découvrez-le au showroom KOM Cycling Studio à Draguignan, sur rendez-vous.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="KOM Cycling Studio">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Regola Gieira – KOM Cycling Studio">
+  <meta property="og:description" content="Regola Gieira, le gravel de Regola. Découvrez-le au showroom KOM Cycling Studio à Draguignan, sur rendez-vous.">
+  <meta property="og:url" content="https://komcyclingstudio.com/fiche-gieira.html">
+  <meta property="og:image" content="https://komcyclingstudio.com/images/partage.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <!-- Polices du site (hébergées sur le site, voir polices.css) : Cormorant Garamond pour les titres, Montserrat pour les textes -->
+  <link rel="stylesheet" href="polices.css">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -24,10 +35,10 @@
     <!-- Bouton ☰ (visible seulement sur téléphone) -->
     <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav class="liens">
-      <a href="velos.html" class="page-active">Les vélos</a>
+      <a href="studio.html">Le studio</a>
       <!-- Menu déroulant « Les marques » : au survol, les 4 marques apparaissent -->
       <div class="menu-deroulant" data-titre="Les marques">
-        <a href="marques.html" class="declencheur">Les marques</a>
+        <a href="marque-drali.html" class="declencheur">Les marques</a>
         <div class="sous-menu"><div class="sous-menu-boite">
           <a href="marque-drali.html">Drali Milano</a>
           <a href="marque-regola.html">Regola</a>
@@ -35,11 +46,13 @@
           <a href="marque-mattio.html">Officine Mattio</a>
         </div></div>
       </div>
-      <a href="studio.html">Le studio</a>
-      <!-- Menu déroulant : au survol, deux choix apparaissent -->
-      <div class="menu-deroulant" data-titre="Équipement">
-        <a href="nutrition.html" class="declencheur">Équipement</a>
+      <a href="velos.html" class="page-active">Les vélos</a>
+      <!-- Menu déroulant « Nos services » : au survol, les 4 services apparaissent -->
+      <div class="menu-deroulant" data-titre="Nos services">
+        <a href="etude-posturale.html" class="declencheur">Nos services</a>
         <div class="sous-menu"><div class="sous-menu-boite">
+          <a href="etude-posturale.html">Étude posturale</a>
+          <a href="financement.html">Financement</a>
           <a href="nutrition.html">Nutrition</a>
           <a href="textile.html">Textile</a>
         </div></div>
@@ -52,7 +65,7 @@
        Pour ajouter une photo : ajouter une ligne <img src="..." alt="..."> ci-dessous. -->
   <section class="fiche-diapo">
     <img src="images/regola-gieira.jpg" alt="Regola Gieira">
-    <img src="images/gieira/gieira-2.jpg" alt="Regola Gieira, photo 2">
+    <img data-src="images/gieira/gieira-2.jpg" alt="Regola Gieira, photo 2">
 
     <button class="fleche fleche-gauche" aria-label="Photo précédente">‹</button>
     <button class="fleche fleche-droite" aria-label="Photo suivante">›</button>
@@ -72,7 +85,7 @@
       <p class="fiche-texte">
         Un cadre gravel de 1 060 g, peinture 100 % personnalisable, avec le choix de la couleur et du design.
       </p>
-      <p class="fiche-prix"><span>À partir de</span>4 290 €</p>
+      <p class="fiche-prix"><span>À partir de</span>4 290 € <small class="ttc">TTC</small></p>
       <a class="bouton" href="rendez-vous.html">Demander des informations</a>
     </div>
 
@@ -110,19 +123,20 @@
       </div>
       <div class="colonne">
         <p class="sur-titre">Le site</p>
-        <p><a href="velos.html">Les vélos</a></p>
-        <p><a href="marques.html">Les marques</a></p>
         <p><a href="studio.html">Le studio</a></p>
+        <p><a href="marque-drali.html">Les marques</a></p>
+        <p><a href="velos.html">Les vélos</a></p>
+        <p><a href="etude-posturale.html">Étude posturale</a> · <a href="financement.html">Financement</a></p>
         <p><a href="nutrition.html">Nutrition</a> · <a href="textile.html">Textile</a></p>
         <p><a href="rendez-vous.html">Nous contacter</a></p>
       </div>
       <div class="colonne">
         <p class="sur-titre">Nos marques</p>
-        <p>Drali Milano · Regola · Gusto · Officine Mattio</p>
+        <p><a href="marque-drali.html">Drali Milano</a> · <a href="marque-regola.html">Regola</a> · <a href="marque-gusto.html">Gusto</a> · <a href="marque-mattio.html">Officine Mattio</a></p>
         <p class="pied-note">Nutrition et textile : 226ERS · GripGrab · OUTWET</p>
       </div>
     </div>
-    <p class="pied-bas">© 2026 KOM Cycling Studio · Vélos de route italiens d'exception</p>
+    <p class="pied-bas">© 2026 KOM Cycling Studio · Vélos de route italiens d'exception · <a href="mentions-legales.html">Mentions légales</a> · <a href="confidentialite.html">Confidentialité</a></p>
   </footer>
 
   <!-- Le programme commun aux fiches : menu + photos qui défilent -->

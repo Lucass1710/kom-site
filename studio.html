@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<!-- Ce fichier est la page « Le studio » : le concept, le parcours, l'étude posturale,
-     l'équipement et le financement. Textes repris du site actuel. -->
+<!-- Ce fichier est la page « Le studio » : le concept et le parcours en 4 étapes.
+     Textes repris du site actuel. -->
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
@@ -8,10 +8,21 @@
   <!-- Version de test : demande aux moteurs de recherche (Google…) de ne pas afficher ce site. À retirer à la mise en ligne finale. -->
   <meta name="robots" content="noindex, nofollow">
   <title>Le studio – KOM Cycling Studio</title>
-  <!-- Polices du site (Google Fonts) : Cormorant Garamond pour les titres, Montserrat pour les textes -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Montserrat:wght@400;500;600&display=swap">
+  <!-- Description pour Google, aperçu quand on partage le lien, et icône d'onglet -->
+  <meta name="description" content="KOM Cycling Studio, showroom privé à Draguignan : un lieu pensé pour une seule personne à la fois, et un parcours en 4 étapes jusqu&#x27;à votre vélo sur mesure.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="KOM Cycling Studio">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Le studio – KOM Cycling Studio">
+  <meta property="og:description" content="KOM Cycling Studio, showroom privé à Draguignan : un lieu pensé pour une seule personne à la fois, et un parcours en 4 étapes jusqu&#x27;à votre vélo sur mesure.">
+  <meta property="og:url" content="https://komcyclingstudio.com/studio.html">
+  <meta property="og:image" content="https://komcyclingstudio.com/images/partage.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <!-- Polices du site (hébergées sur le site, voir polices.css) : Cormorant Garamond pour les titres, Montserrat pour les textes -->
+  <link rel="stylesheet" href="polices.css">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -23,10 +34,10 @@
     <!-- Bouton ☰ (visible seulement sur téléphone) -->
     <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav class="liens">
-      <a href="velos.html">Les vélos</a>
+      <a href="studio.html" class="page-active">Le studio</a>
       <!-- Menu déroulant « Les marques » : au survol, les 4 marques apparaissent -->
       <div class="menu-deroulant" data-titre="Les marques">
-        <a href="marques.html" class="declencheur">Les marques</a>
+        <a href="marque-drali.html" class="declencheur">Les marques</a>
         <div class="sous-menu"><div class="sous-menu-boite">
           <a href="marque-drali.html">Drali Milano</a>
           <a href="marque-regola.html">Regola</a>
@@ -34,11 +45,13 @@
           <a href="marque-mattio.html">Officine Mattio</a>
         </div></div>
       </div>
-      <a href="studio.html" class="page-active">Le studio</a>
-      <!-- Menu déroulant : au survol, deux choix apparaissent -->
-      <div class="menu-deroulant" data-titre="Équipement">
-        <a href="nutrition.html" class="declencheur">Équipement</a>
+      <a href="velos.html">Les vélos</a>
+      <!-- Menu déroulant « Nos services » : au survol, les 4 services apparaissent -->
+      <div class="menu-deroulant" data-titre="Nos services">
+        <a href="etude-posturale.html" class="declencheur">Nos services</a>
         <div class="sous-menu"><div class="sous-menu-boite">
+          <a href="etude-posturale.html">Étude posturale</a>
+          <a href="financement.html">Financement</a>
           <a href="nutrition.html">Nutrition</a>
           <a href="textile.html">Textile</a>
         </div></div>
@@ -95,85 +108,6 @@
     </div>
   </section>
 
-  <!-- 4. L'étude posturale : photo à gauche, texte à droite (photo du site actuel) -->
-  <section class="deux-colonnes">
-    <img src="images/studio/etude-posturale.jpg" alt="Étude posturale au showroom : mesure de l'angle du genou sur un vélo installé sur rouleaux">
-    <div>
-      <p class="sur-titre">Sur mesure</p>
-      <h2 class="titre-section">L'étude posturale</h2>
-      <p class="texte">
-        Un vélo d'exception ne tient ses promesses que s'il est parfaitement ajusté à celui
-        qui le monte. L'étude posturale est l'étape qui permet de définir la position qui vous
-        convient, avant même de choisir le cadre.
-      </p>
-      <p class="petit-titre">Ce que nous analysons</p>
-      <ul class="liste-doree">
-        <li>Votre morphologie et vos mensurations</li>
-        <li>Votre souplesse et vos éventuelles gênes</li>
-        <li>Votre pratique : sorties, distances, objectifs</li>
-      </ul>
-      <p class="petit-titre">Ce que vous y gagnez</p>
-      <ul class="liste-doree">
-        <li>Une taille de cadre et des réglages choisis pour vous</li>
-        <li>Plus de confort sur les longues sorties</li>
-        <li>Un meilleur transfert de puissance dans les pédales</li>
-      </ul>
-      <a class="bouton" href="rendez-vous.html">Réserver mon étude posturale</a>
-    </div>
-  </section>
-
-  <!-- 6. L'équipement du cycliste -->
-  <section class="section-studio">
-    <p class="sur-titre">Au showroom</p>
-    <h2 class="titre-section">L'équipement du cycliste</h2>
-    <p class="texte-centre" style="margin-bottom:4rem">
-      Au showroom, vous ne repartez pas seulement avec un vélo : nutrition, accessoires,
-      textile technique et textile personnalisable vous attendent aussi.
-    </p>
-    <div class="blocs trois">
-      <div class="bloc">
-        <p class="petit-titre">Nutrition</p>
-        <h3>226ERS</h3>
-        <p>Gels énergétiques, barres et boissons pour vos sorties et votre préparation. Les produits
-          les plus demandés sont disponibles au showroom.</p>
-        <a class="lien-dore" href="https://226ers.com/" target="_blank" rel="noopener">Voir la gamme ↗</a>
-      </div>
-      <div class="bloc">
-        <p class="petit-titre">Accessoires et textile technique</p>
-        <h3>GripGrab</h3>
-        <p>La marque danoise de textile technique et d'accessoires pour le cyclisme, au tarif
-          préférentiel « Studio ».</p>
-        <a class="lien-dore" href="https://www.gripgrab.com/" target="_blank" rel="noopener">Voir les produits ↗</a>
-      </div>
-      <div class="bloc">
-        <p class="petit-titre">Textile personnalisable</p>
-        <h3>OUTWET</h3>
-        <p>La marque italienne spécialiste du « custom », pour les groupes, clubs et associations.
-          C'est elle qui habille le Studio.</p>
-        <a class="lien-dore" href="https://www.outwet.it/" target="_blank" rel="noopener">Découvrir OUTWET ↗</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 7. Financement -->
-  <section class="section-studio">
-    <p class="sur-titre">Financement</p>
-    <h2 class="titre-section">Votre vélo, à votre rythme.</h2>
-    <p class="texte-centre">
-      Le Studio s'est associé à Cofidis pour vous proposer une solution de financement
-      en plusieurs mensualités.
-    </p>
-    <div class="chiffres">
-      <div class="chiffre"><strong>3 ou 4 fois</strong><span>sans frais par carte bancaire</span></div>
-      <div class="chiffre"><strong>10 à 60 mois</strong><span>de financement possible</span></div>
-    </div>
-    <a class="bouton" href="rendez-vous.html">Demander une simulation</a>
-    <p class="mention">
-      Sous réserve d'acceptation de votre dossier par Cofidis. Un crédit vous engage et doit être
-      remboursé. Vérifiez vos capacités de remboursement avant de vous engager.
-    </p>
-  </section>
-
   <!-- ===== PIED DE PAGE (identique sur toutes les pages) ===== -->
   <footer class="pied-de-page">
     <div class="pied-haut">
@@ -195,19 +129,20 @@
       </div>
       <div class="colonne">
         <p class="sur-titre">Le site</p>
-        <p><a href="velos.html">Les vélos</a></p>
-        <p><a href="marques.html">Les marques</a></p>
         <p><a href="studio.html">Le studio</a></p>
+        <p><a href="marque-drali.html">Les marques</a></p>
+        <p><a href="velos.html">Les vélos</a></p>
+        <p><a href="etude-posturale.html">Étude posturale</a> · <a href="financement.html">Financement</a></p>
         <p><a href="nutrition.html">Nutrition</a> · <a href="textile.html">Textile</a></p>
         <p><a href="rendez-vous.html">Nous contacter</a></p>
       </div>
       <div class="colonne">
         <p class="sur-titre">Nos marques</p>
-        <p>Drali Milano · Regola · Gusto · Officine Mattio</p>
+        <p><a href="marque-drali.html">Drali Milano</a> · <a href="marque-regola.html">Regola</a> · <a href="marque-gusto.html">Gusto</a> · <a href="marque-mattio.html">Officine Mattio</a></p>
         <p class="pied-note">Nutrition et textile : 226ERS · GripGrab · OUTWET</p>
       </div>
     </div>
-    <p class="pied-bas">© 2026 KOM Cycling Studio · Vélos de route italiens d'exception</p>
+    <p class="pied-bas">© 2026 KOM Cycling Studio · Vélos de route italiens d'exception · <a href="mentions-legales.html">Mentions légales</a> · <a href="confidentialite.html">Confidentialité</a></p>
   </footer>
 
   <!-- Menu transparent sur la photo, noir quand on fait défiler (programme commun) -->

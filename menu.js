@@ -9,6 +9,9 @@ const boutonBurger = document.querySelector('.burger');
 
 function ouvrirFermerMenu(ouvrir) {
   barreMenu.classList.toggle('ouvert', ouvrir);
+  if (!ouvrir) {   // en refermant le menu ☰, on replie aussi les sous-menus
+    barreMenu.querySelectorAll('.menu-deroulant.deplie').forEach(function (b) { b.classList.remove('deplie'); });
+  }
   document.body.classList.toggle('menu-ouvert', ouvrir);   // bloque le défilement de la page derrière
   boutonBurger.setAttribute('aria-expanded', ouvrir);
   boutonBurger.setAttribute('aria-label', ouvrir ? 'Fermer le menu' : 'Ouvrir le menu');
@@ -19,9 +22,31 @@ if (boutonBurger) {
     ouvrirFermerMenu(!barreMenu.classList.contains('ouvert'));
   });
 
+  // Sur téléphone, « Les marques » et « Nos services » fonctionnent en accordéon :
+  // un appui déplie leurs choix juste en dessous (et replie l'autre menu), un 2e appui les replie.
+  const surTelephone = window.matchMedia('(max-width: 700px)');
+  barreMenu.querySelectorAll('.menu-deroulant .declencheur').forEach(function (declencheur) {
+    declencheur.setAttribute('aria-expanded', 'false');
+    declencheur.addEventListener('click', function (e) {
+      if (!surTelephone.matches) return;          // sur ordinateur : lien normal (menu au survol)
+      e.preventDefault();
+      const bloc = declencheur.parentElement;
+      const deplier = !bloc.classList.contains('deplie');
+      barreMenu.querySelectorAll('.menu-deroulant.deplie').forEach(function (autre) {
+        autre.classList.remove('deplie');
+        autre.querySelector('.declencheur').setAttribute('aria-expanded', 'false');
+      });
+      bloc.classList.toggle('deplie', deplier);
+      declencheur.setAttribute('aria-expanded', deplier);
+    });
+  });
+
   // Un appui sur un lien du menu le referme (utile pour les liens de la même page)
   barreMenu.querySelectorAll('.liens a').forEach(function (lien) {
-    lien.addEventListener('click', function () { ouvrirFermerMenu(false); });
+    lien.addEventListener('click', function () {
+      if (lien.classList.contains('declencheur') && surTelephone.matches) return;   // il déplie, il ne ferme pas
+      ouvrirFermerMenu(false);
+    });
   });
 
   // La touche Échap referme aussi le menu
@@ -171,3 +196,41 @@ document.querySelectorAll('.logo, .pied-logo').forEach(function (logo) {
     try { sessionStorage.setItem('rejouer-intro', 'oui'); } catch (e) {}
   });
 });
+
+// ============================================================
+// Photos des diaporamas chargées seulement au moment où on les regarde.
+// Dans les pages, les photos cachées ont leur adresse dans data-src (au lieu de src) :
+// dès qu'une photo (ou sa diapo) devient « visible », on la charge, et on prépare
+// aussi la suivante pour que le défilement reste fluide.
+// ============================================================
+(function () {
+  function charger(img) {
+    if (img && img.dataset && img.dataset.src) {
+      img.src = img.dataset.src;
+      img.removeAttribute('data-src');
+    }
+  }
+  function photoDe(el) { return el && (el.tagName === 'IMG' ? el : el.querySelector('img')); }
+  function suivante(el) {
+    let s = el.nextElementSibling;
+    while (s && !(s.tagName === 'IMG' || (s.classList && s.classList.contains('diapo')))) s = s.nextElementSibling;
+    return s;
+  }
+  function verifier(el, auDemarrage) {
+    if (!el.classList.contains('visible')) return;
+    charger(photoDe(el));
+    // Dans le catalogue, au chargement de la page, on ne prépare pas encore la photo suivante :
+    // elle ne sera préparée que si le visiteur commence à faire défiler la carte.
+    if (auDemarrage && el.closest('.carte-diapo')) return;
+    const s = suivante(el);
+    if (s) charger(photoDe(s));
+  }
+  const cibles = document.querySelectorAll('.fiche-diapo img, .carte-diapo img, .diaporama .diapo');
+  const observateurPhotos = new MutationObserver(function (changements) {
+    changements.forEach(function (c) { verifier(c.target, false); });
+  });
+  cibles.forEach(function (el) {
+    observateurPhotos.observe(el, { attributes: true, attributeFilter: ['class'] });
+    verifier(el, true);
+  });
+})();

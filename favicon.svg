@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+  <!-- Icône d'onglet KOM : le « K » doré du logo sur fond noir -->
+  <rect width="1000" height="1000" rx="160" fill="#000"/>
+  <g transform="translate(140 150) scale(0.86)" stroke="#a88b5e" stroke-width="58" stroke-linecap="square" fill="none">
+    <line x1="100" y1="12" x2="100" y2="760"/>
+    <line x1="213" y1="12" x2="213" y2="760"/>
+    <line x1="100" y1="540" x2="640" y2="0"/>
+    <line x1="213" y1="577" x2="790" y2="0"/>
+    <line x1="296" y1="494" x2="562" y2="760"/>
+    <line x1="398" y1="392" x2="766" y2="760"/>
+  </g>
+</svg>
